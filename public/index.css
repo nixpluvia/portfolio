@@ -1039,10 +1039,143 @@ section {
 }
 
 
-/* 포트폴리오 섹션 - 컨텐츠*/
-.portfolio>.content-box {
-    margin-top: 50px;
+/* 포트폴리오 섹션 - 타이틀*/
+.portfolio>.content-box .title{
+    padding: 15.479876160990711vh 0;
 }
+
+.portfolio .pf-content .pf-item-title{
+    font-size:3.6rem;
+    line-height: 3.6rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding-bottom: 3.611971104231166vh;
+}
+.portfolio .pf-content .pf-item-bar {
+    margin-bottom: 4.953560371517028vh;
+}
+.portfolio .pf-content .pf-item-bar > .tag{
+    height: 18px;
+}
+.portfolio .pf-content .pf-item-bar > .tag > img{
+    display: block;
+    height: 100%;
+}
+.portfolio .pf-content .color-list {
+    margin-left: 21px;
+}
+.portfolio .pf-content .color-list > li{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+.portfolio .pf-content .color-list > li+li{
+    margin-left: 6px;
+}
+
+.portfolio .pf-content .pf-item-body {
+    max-width: 465px;
+}
+.portfolio .pf-content .pf-item-body p{
+    font-size: 1.4rem;
+    word-break: keep-all;
+}
+
+
+/* 포트폴리오 이미지 박스 */
+.portfolio .portfolio-img-box{
+    width: 586px;
+    height: 100vh;
+    background-color: green;
+}
+.portfolio .portfolio-img-box ul{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.portfolio .portfolio-img-box ul > li{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: background 3s;
+}
+.portfolio .portfolio-img-box ul > li > a{
+    display: block;
+    height: 100%;
+}
+.portfolio .portfolio-img-box ul > li:hover{
+    background-position: left bottom;
+}
+
+
+
+/* 포트폴리오 슬라이드 탭 버튼 */
+.portfolio .pf-slide-box {
+    margin-top: auto;
+    margin-left: -110px;
+    max-width: 980px;
+    width: calc(100% + 66px);
+    overflow: hidden;
+}
+
+.portfolio .pf-tab-bar{
+    position: relative;
+    height: 39px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid #2D2924;
+}
+.portfolio .pf-tab-bar .btn-bg-bar {
+    position: absolute;
+    top: 0;
+    height: 100%;
+}
+
+.portfolio .pf-tab-bar > div+div{
+    margin-left: 50px;
+}
+.portfolio .pf-tab-bar > div:last-child {
+    margin-right: 10px;
+}
+.portfolio .pf-tab-bar .pf-tab-btn{
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    font-weight: 500;
+    color: #2D2924;
+}
+.portfolio .pf-tab-bar .pf-tab-btn.active{
+    color: #ffffff;
+}
+
+
+
+/* 포트폴리오 슬라이드 */
+.portfolio .pf-slide {
+}
+.portfolio .pf-slide .item + .item{
+    margin-right: 20px;
+}
+.portfolio .pf-slide .item{
+    width: 180px;
+    height: 180px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+
+
+
+
+
+
+
 
 /* 포트폴리오 섹션 - 탭 박스 버튼 */
 .portfolio>.content-box>.head>button+button {
@@ -1214,16 +1347,16 @@ section {
 }
 
 /* design 섹션 - 슬라이드 */
-.design .swiper-container {
+.design .slick-slider1 {
     flex: 1 0 0;
+    overflow: hidden;
 }
-
-.design .swiper-container .swiper-slide {
+.design .slick-slider1 .slick-item{
     position: relative;
 }
 
 /* design 섹션 - 슬라이드 이미지 박스*/
-.design .swiper-container .swiper-slide>.img {
+.design .slick-slider1 .slick-item .img {
     width: 450px;
     flex-shrink: 0;
     border-right: 10px solid #2D2924;
@@ -1234,73 +1367,73 @@ section {
     transition: background 3s;
 }
 
-.design .swiper-container .swiper-slide>.img:hover {
+.design .slick-slider1 .slick-item .img:hover {
     background-position: 0 100%;
 }
 
 
-.design .swiper-container .swiper-slide>.img::before {
+.design .slick-slider1 .slick-item .img::before {
     content: "";
     display: block;
     padding-bottom: 133.33333333333333%;
 }
 
-.design .swiper-container .swiper-slide:nth-child(1)>.img {
-    background-image: url("https://nixpluvia.github.io/img1/pf/portfolio/design-kyobo.png");
+.design .slick-slider1 .slick-item:nth-child(1) .img {
+    background-image: url("./resource/design-kyobo.png");
 }
 
-.design .swiper-container .swiper-slide:nth-child(2)>.img {
-    background-image: url("https://nixpluvia.github.io/img1/pf/portfolio/portfolio-cocacola.png");
+.design .slick-slider1 .slick-item:nth-child(2) .img {
+    background-image: url("./resource/site-coca-img.png");
 }
 
 /* design 섹션 - 슬라이드 텍스트 박스*/
-.design .swiper-container .swiper-slide>.txt {
+.design .slick-slider1 .slick-item .txt {
     position: relative;
     padding-top: 4.946%;
     padding-left: 5.771%;
     background-color: #ffffff;
 }
 
-.design .swiper-container .swiper-slide>.txt>.title {
+.design .slick-slider1 .slick-item .txt>.title {
     margin-bottom: 25px;
     font-weight: 900;
     letter-spacing: 1px;
 }
 
-.design .swiper-container .swiper-slide>.txt>.tag {
+.design .slick-slider1 .slick-item .txt>.tag {
     margin-bottom: 30px;
 }
 
-.design .swiper-container .swiper-slide>.txt>.tag>.tag-icon {
+.design .slick-slider1 .slick-item .txt>.tag>.tag-icon {
     margin-right: 10px;
 }
 
-.design .swiper-container .swiper-slide>.txt>.tag>.tag-icon>img {
+.design .slick-slider1 .slick-item .txt>.tag>.tag-icon>img {
     display: block;
     height: 24px;
 }
 
-.design .swiper-container .swiper-slide>.txt>.txt-body {
+.design .slick-slider1 .slick-item .txt>.txt-body {
     width: 70%;
 }
 
-.design .swiper-container .swiper-slide>.txt>.txt-body>p {
+.design .slick-slider1 .slick-item .txt>.txt-body>p {
     font-size: calc(1.1rem + 0.15625vw);
     font-weight: 400;
     letter-spacing: 0.5px;
 }
 
-.design .swiper-container .swiper-slide>.txt>.source {
+.design .slick-slider1 .slick-item .txt>.source {
     position: absolute;
     bottom: 10%;
 }
 
-.design .swiper-container .swiper-slide>.txt>.source>span {
+.design .slick-slider1 .slick-item .txt>.source>span {
     font-weight: 500;
 }
 
 /* design 섹션 - 슬라이드 배경 이미지 */
-.design .swiper-container .swiper-slide>.bg-img {
+.design .slick-slider1 .slick-item .bg-img {
     position: absolute;
     bottom: 5%;
     right: 0;
@@ -1311,7 +1444,7 @@ section {
     background-size: contain;
 }
 
-.design .swiper-container .swiper-slide>.bg-img::before {
+.design .slick-slider1 .slick-item .bg-img::before {
     content: "";
     display: block;
     padding-bottom: 166.66666666666667%;
@@ -1680,7 +1813,7 @@ footer>h2 {
         padding-right: 0;
         margin-bottom: 7vw;
     }
-    .design .swiper-container {
+    .design .slick-slider1 {
         width: 100%;
         flex: 0 0 auto;
     }
@@ -1757,7 +1890,7 @@ footer>h2 {
     }
 
 
-    .design .swiper-container .swiper-slide>.img {
+    .design .slick-slider1 .slick-item>.img {
         width: 375px;
     }
 }

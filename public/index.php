@@ -7,8 +7,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
 
     <link rel="stylesheet" href="./index.css">
     <script src="./index.js"></script>
@@ -223,7 +223,7 @@
             <div class="about-wrap con">
                 <h2 class="title font-Fredericka fs-title2">
                     <div class="inline-block relative">
-                        <span class="txt-front">AboutMe</span>
+                        <span class="txt-front inline-block">AboutMe</span>
                         <i class="page-title-line t-line1"></i>
                         <i class="page-title-line t-line2"></i>
                         <i class="page-title-line t-line3"></i>
@@ -454,11 +454,60 @@
         </section>
 
         <!-- 웹사이트 포트폴리오 -->
-        <section class="portfolio section-page con actived-on-visible">
-            <h2 class="title font-Fredericka fs-title2">
-                <span>Portfolio</span>
-            </h2>
-            <div class="content-box">
+        <section class="portfolio flex section-page con actived-on-visible">
+            <div class="content-box flex-column flex-grow-1">
+                <h2 class="title font-Fredericka fs-title2">
+                    <div class="inline-block relative">
+                        <span class="txt-front inline-block">Portfolio</span>
+                        <i class="page-title-line t-line1"></i>
+                        <i class="page-title-line t-line2"></i>
+                        <i class="page-title-line t-line3"></i>
+                    </div>
+                </h2>
+                <div class="pf-content">
+                    <ul class="pf-items">
+                        <li class="pf-item">
+                            <h3 class="pf-item-title">COCACOLA</h3>
+                            <div class="pf-item-bar flex">
+                                <div class="tag">
+                                    <img src="./resource/icon-redesign.svg" alt="">
+                                </div>
+                                <ul class="color-list flex-ai-c">
+                                    <li class="item-color" style="background-color: #000000;"></li>
+                                    <li class="item-color" style="background-color: #F40009;"></li>
+                                </ul>
+                            </div>
+                            <div class="pf-item-body">
+                                <p>
+                                    기존의 cocacola company 사이트의 불편한 사이트의 구성과 요소들을 제거하고
+                                    코카콜라의 아이덴티티를 살린 디자인을 컨셉으로 잡고 진행 했습니다.
+                                    코카콜라의 색상을 포인트로 화면을 구성하고 페이지에 맞는 모양의 디자인을 사용해서
+                                    단조로움을 피하는 디자인을 진행 했습니다.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="pf-slide-box">
+                    <div class="btn-bg-bar"></div>
+                    <div class="pf-tab-bar flex-jc-end flex-ai-c font-noto">
+                        <div class="pf-tab-btn btn-all">ALL</div>
+                        <div class="pf-tab-btn btn-redesign">REDESIGN</div>
+                        <div class="pf-tab-btn btn-copy">COPY</div>
+                    </div>
+                    <div class="pf-slide" dir="rtl">
+                        <div class="item" data-item-tab="1" style="background-image:url('./resource/cocacola-img.png');"></div>
+                        <div class="item" data-item-tab="2" style="background-image:url('./resource/artfive-img.png');"></div>
+                        <div class="item" data-item-tab="2" style="background-image:url('./resource/designpixel-img.png');"></div>
+                        <div class="item" data-item-tab="2" style="background-image:url('./resource/heimish-img.png');"></div>
+                        <div class="item" data-item-tab="2" style="background-image:url('./resource/cleaderm-img.png');"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-img-box">
+                <ul class="pf-img-list">
+                    <li class="pf-img" style="background-image:url(./resource/site-coca-img.png)"><a href="#"></a></li>                    
+                </ul>
             </div>
         </section>
 
@@ -467,9 +516,9 @@
             <h2 class="title font-Fredericka fs-title2">
                 <span>“Design”</span>
             </h2>
-            <div class="slider swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide flex">
+            <div class="slider slick-slider1">
+                <div class="slick-item">
+                    <div class="flex">
                         <div class="img flex-shrink-0"></div>
                         <ul class="txt">
                             <li class="title font-noto fs-subtitle2">교보문고 리디자인</li>
@@ -496,7 +545,9 @@
                         </ul>
                         <div class="bg-img"></div>
                     </div>
-                    <div class="swiper-slide flex">
+                </div>
+                <div class="slick-item">
+                    <div class="flex">
                         <div class="img flex-shrink-0"></div>
                         <ul class="txt">
                             <li class="title font-noto fs-subtitle2">코카콜라 리디자인</li>
