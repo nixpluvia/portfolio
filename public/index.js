@@ -188,6 +188,7 @@ function ActiveOnVisible__checkAndActive() {
     $(".active-on-visible, .actived-on-visible").each(function (index, node) {
         var $node = $(node);
         var $actived;
+        var HalfHeight = $(window).outerHeight() / 2 - 58.5;
         if ($node.hasClass('actived-on-visible')){
             $actived = $(node);
         }
@@ -206,7 +207,7 @@ function ActiveOnVisible__checkAndActive() {
                     $node.addClass("active");
                     if ( $node.hasClass('section-page') ){
                         $('.pagenation > ul > li').removeClass('active');
-                        $('.pagenation > ul > li').eq(index).addClass('active');
+                        $('.pagenation > ul > li').eq($node.attr('data-page-index')).addClass('active');
                     }
 
                     if ( $actived.hasClass('actived') == false ) {
@@ -218,6 +219,16 @@ function ActiveOnVisible__checkAndActive() {
                         }
                     }
                 }, delay);
+            }
+        }
+
+        // 페이지 네비게이션 컬러 이벤트 용
+        if ($node.hasClass('section-page') && $(window).scrollTop() >= offsetTop && $(window).scrollTop() <= offsetBottom) {
+            if ($(window).scrollTop() < offsetBottom - HalfHeight) {
+                $('body').attr('data-dot-page-index', parseInt($node.attr('data-page-index')));
+            }
+            if ($(window).scrollTop() > offsetBottom - HalfHeight) {
+                $('body').attr('data-dot-page-index', parseInt($node.attr('data-page-index')) + 1);
             }
         }
     });
@@ -268,34 +279,23 @@ function windowResize__init() {
     });
 }
 
-// 타이틀 라인 사이즈 구하는 함수 시작
-function lineSize__init() {
-    var titleSize = $('.intro > .title').outerWidth();
-    var sizePercent = titleSize / 20;
-    $('.intro > .title > .title-paint-line > img').css('width', titleSize + sizePercent);
-}
-// 타이틀 라인 사이즈 구하는 함수 끝
-
 
 
 
 function pagenation(){
-    if ($('html').data('data-intro') == true) {
-        return;
-    }
     var $this = $(this);
     var dotIndex = $this.index();
-    var $section = $('.wrap > section').eq(dotIndex);
+    var $section = $('.wrap > .section-page').eq(dotIndex);
     var sectionOffset = parseInt($section.attr("data-active-on-visible-offsetTop"));
 
-    console.log($this.index());
-    var diffy = 1;
+    // console.log($this.index());
+    // var diffy = 1;
 
-    if( dotIndex == 1 ) {
-        diffy = 200;
-    }
+    // if( dotIndex == 1 ) {
+    //     diffy = 200;
+    // }
     $('html,body').stop().animate({
-        scrollTop : sectionOffset + diffy + 'px'
+        scrollTop : sectionOffset + 'px'
     }, 1000);
 
 }
@@ -318,7 +318,11 @@ function slickSlide_init() {
     $('.slick-slider1').slick({
         dots:false,
         infinite: false,
-        slidesToShow: 1
+        slidesToShow: 1,
+        arrows: true,
+        appendArrows: $('.design .design-slide-arrows'),
+        prevArrow : '<div class="prev"><img src="./resource/arrow-left.svg"></div>',
+        nextArrow : '<div class="next"><img src="./resource/arrow-right.svg"></div>'
     });
 
     $('.pf-slide').slick({
@@ -349,20 +353,42 @@ function slickSlide_init() {
 // 포트폴리오 클릭 함수 시작
 function portfolioSlideClick(){
     var $this = $(this);
+    var $itemList = $this.parent().find(' > .item');
     var itemIndex = $this.attr('data-slick-index');
     var $pfImg = $('.portfolio .pf-img-list > li');
     var $pfContent = $('.portfolio .pf-items > li');
 
+    $itemList.removeClass('active');
     $pfImg.removeClass('active');
     $pfContent.removeClass('active');
+
+    $this.addClass('active');
     $pfImg.eq(itemIndex).addClass('active');
     $pfContent.eq(itemIndex).addClass('active');
 }
 
+// 포트폴리오 탭 클릭
+function portfolioTabClick(){
+    var $this = $(this);
+    var thisWidth = $this.outerWidth();
+    var leftPosition = $this.position().left;
+    var ParentWidth = $this.closest('.pf-tab-bar').outerWidth();
+    var rightPostion = ParentWidth - leftPosition - thisWidth - 65;
+    var $btnBg = $('.portfolio .btn-bg-bar');
+
+    $this.parent().find('> .pf-tab-btn').removeClass('active');
+    $this.addClass('active');
+    $btnBg.css('width', thisWidth + 30 +'px');
+    $btnBg.css('right', rightPostion + 'px');
+}
+
+
+
 function portfolioClick__init(){
     $('.pf-slide .item').click(portfolioSlideClick);
-    
-    
+
+    $('.portfolio .pf-tab-btn').click(portfolioTabClick);
+    $('.portfolio .btn-all').click();
 }
 
 
@@ -373,31 +399,51 @@ function portfolioClick__init(){
 // 포트폴리오 클릭 함수 끝
 
 // 팝업 함수
-function popup__init(){
+function popupOpen() {
     var $this = $(this);
-    var $item = $this.closest('.item');
-    var itemIndex = $item.index();
+    var itemIndex = $this.attr('data-popup-index');
+    var $popupBox = $('.popup-box');
+    var $popupBg = $('.popup-bg');
+    var $popupItem = $popupBox.find('.popup-items > .popup-item');
 
-    var $img = $item.find('> .item-content > .item-img-box');
-    var imgHref = $img.attr('data-pu-href');
-    var imgUrl = $img.attr('data-pu-imgurl');
+    console.log(itemIndex);
 
-    var $popup = $('.portfolio-popup');
-    var $popupImg = $popup.find(' > .popup-box > .popup-img > a');
-    var $popupTxt = $popup.find(' > .popup-box > .txt-box > ul > li').eq(itemIndex);
-
-    $popupImg.attr('href', imgHref);
-    $popupImg.css('background-image', 'url(' + imgUrl + ')');
-    $popup.addClass('active');
-    $popupTxt.addClass('active');
+    $popupBg.addClass('active');
+    $popupBox.addClass('active');
+    $popupItem.eq(itemIndex).addClass('active');
 }
 
-// 팝업 스크롤 방지
-function popUpScroll(){
-    $('.portfolio-popup').on("mousewheel DOMMouseScroll", function (e) {
-        e.preventDefault();
-        return;
-    })
+function popupClose() {
+    var $popupBox = $('.popup-box');
+    var $popupBg = $('.popup-bg');
+    var $popupItem = $popupBox.find('.popup-items > .popup-item');
+
+    $popupBox.removeClass('active');
+    $popupBg.removeClass('active');
+    $popupItem.removeClass('active');
+}
+
+function popupArrow() {
+    var $this = $(this);
+    var $popupBox = $this.closest('.popup-box');
+    var $popupItem = $popupBox.find('.popup-items > .popup-item.active');
+    var post;
+    if ($this.index() == 0) {
+        post = $popupItem.prev();
+    } else {
+        post = $popupItem.next();
+    }
+
+    if (post.length == 0) {
+        if ($this.index() == 0) {
+            post = $popupBox.find('.popup-items > .popup-item:last-child');
+        } else {
+            post = $popupBox.find('.popup-items > .popup-item:first-child');
+        }
+    }
+
+    $popupItem.removeClass('active');
+    post.addClass('active');
 }
 
 
@@ -410,14 +456,9 @@ function click__init(){
     $('.portfolio > .content-box > .head > button').click(ActiveOnVisible__initOffset);
 
     // 팝업 클릭 이벤트
-    $('.portfolio .content-box .body .item-img-box, .portfolio .content-box .body .txt').click(popup__init);
-    $('.portfolio-popup > .popup-box').click(function(e){
-        e.stopPropagation();
-    })
-    $('.portfolio-popup').click(function(){
-        $('.portfolio-popup').removeClass('active');
-        $('.portfolio-popup > .popup-box > .txt-box > ul > li').removeClass('active');
-    });
+    $('.btn-popup-item').click(popupOpen);
+    $('.popup-bg, .btn-close').click(popupClose);
+    $('.popup-button > button').click(popupArrow);
 }
 
 
@@ -434,14 +475,14 @@ function setTime__init(){
 $(function () {
     // 라인 애니메이션
     lineAni__init();
-    // 타이틀 라인 사이즈 함수
-    lineSize__init();
     // 탭박스 함수
     tabBox__init();
 
     // 슬라이드
     slickSlide_init();
     windowResize__init();
+
+    portfolioClick__init();
 
     // 인트로 페이지 함수
     // introAni__init();
@@ -455,8 +496,6 @@ $(function () {
     pagenation__init();
     
     setTime__init();
-
-    popUpScroll();
 });
 
 // // 시작 위치 초기화

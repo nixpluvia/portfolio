@@ -15,7 +15,7 @@
     <title>LeeHoyeon Portfolio</title>
 </head>
 
-<body class="relative">
+<body class="relative" data-dot-page-index="0">
     <!-- 사이드 바 -->
     <div class="side-shadow"></div>
     <div class="side-bar">
@@ -62,13 +62,26 @@
         </button>
         <nav class="side-bar-menu">
             <ul class="font-Fredericka">
-                <li>Intro</li>
-                <li>About</li>
-                <li>Portfolio</li>
-                <li>Design</li>
-                <li>Contact</li>
+                <li>
+                    <span>Intro</span>
+                </li>
+                <li>
+                    <span>About Me</span>
+                </li>
+                <li>
+                    <span>Portfolio</span>
+                </li>
+                <li>
+                    <span>Design</span>
+                </li>
+                <li>
+                    <span>Contact</span>
+                </li>
             </ul>
         </nav>
+        <div class="site-info">
+            이 사이트는 포트폴리오를 위해 제작되었습니다.
+        </div>
     </div>
 
     <!-- 페이지 버튼 -->
@@ -82,67 +95,32 @@
         </ul>
     </div>
 
-    <!-- <div class="skill-tab tab-box" data-tab-name="box-1" data-tab-body-item-name="2">
-        
-        <div class="other-skills">
-            <h3 class="box-title font-noto fs-txt1">Other Skills</h3>
-            <div class="wrap flex">
-                <div class="skill-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70">
-                        <g>
-                            <rect class="icon-1" x="4.1" y="4.1" width="61.8" height="61.8" />
-                            <path d="M0,0V70H70V0ZM65.9,65.9H4.1V4.1H65.9Z" />
-                            <path
-                                d="M29.14,24.83H19.26v23.3h4.53V40.32H29.3a7.52,7.52,0,0,0,7.25-7.75C36.55,29,33.66,24.83,29.14,24.83ZM29,36.35H23.79V28.8h5.05c1.92,0,3.12,1.8,3.12,3.77C32,34.86,30.63,36.35,29,36.35Z" />
-                            <path
-                                d="M46.07,37.82c-.64-.15-3.38-.6-3.38-2.16,0-1.26,1-1.94,2.62-1.94a9,9,0,0,1,5,1.9L52.07,33a9.52,9.52,0,0,0-6.73-2.37c-3.59,0-6.76,2-6.76,5.68s5,4.48,6.14,4.79c1.33.37,3.77.85,3.77,2.33,0,1.2-1.15,1.9-2.82,1.9a11.34,11.34,0,0,1-6-2.26L38,45.8a12.43,12.43,0,0,0,7.78,2.65c2.14,0,7-.67,7-5.44C52.73,39,47.25,38.13,46.07,37.82Z" />
-                        </g>
-                    </svg>
-                </div>
-                <div class="skill-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70">
-                        <g>
-                            <rect class="icon-1" x="4.1" y="4.1" width="61.8" height="61.8" />
-                            <path
-                                d="M33.06,24.83h-4l-8.89,23.3h4.66L27,42.32h8.14l2.17,5.81h4.66Zm-5.35,14.3L31.05,30l3.22,9.15Z" />
-                            <rect x="44.05" y="30.93" width="4.4" height="17.19" />
-                            <rect x="44.05" y="24.17" width="4.4" height="4.36" />
-                            <path d="M0,0V70H70V0ZM65.9,65.9H4.1V4.1H65.9Z" />
-                        </g>
-                    </svg>
-                </div>
-                <div class="skill-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70">
-                        <g>
-                            <rect class="icon-1" x="4.1" y="4.1" width="61.8" height="61.8" />
-                            <path d="M0,0V70H70V0ZM65.9,65.9H4.1V4.1H65.9Z" />
-                            <path
-                                d="M27.64,24.83h-4l-8.89,23.3h4.66l2.13-5.81h8.14l2.16,5.81H36.5Zm-5.35,14.3L25.64,30l3.22,9.15Z" />
-                            <path
-                                d="M55.14,39.46c0-5.93-4.59-8.82-9-8.82a8.91,8.91,0,1,0,0,17.81c5.22,0,7.37-3.18,8-4.49l-3.77-1.05a4.45,4.45,0,0,1-4.07,2.33c-3.77,0-4.49-3.62-4.56-4.3H55C55.08,40.76,55.14,39.75,55.14,39.46ZM41.69,38.08a4.46,4.46,0,0,1,8.92,0Z" />
-                        </g>
-                    </svg>
-                </div>
-                <div class="skill-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70">
-                        <g>
-                            <rect class="icon-1" x="4.1" y="4.1" width="61.8" height="61.8" />
-                            <path d="M0,0V70H70V0ZM65.9,65.9H4.1V4.1H65.9Z" />
-                            <path
-                                d="M31.33,24.83H21.46v23.3H26V40.32H31.5a7.53,7.53,0,0,0,7.25-7.75C38.75,29,35.85,24.83,31.33,24.83Zm-.1,11.52H26V28.8H31c1.92,0,3.12,1.8,3.12,3.77C34.16,34.86,32.82,36.35,31.23,36.35Z" />
-                            <path
-                                d="M51.71,34.74v-4c-4-.41-5.9,3.29-6.2,3.88V30.93h-4v17.2h4.4V37.72c.46-1,2-3,5.84-3Z" />
-                        </g>
-                    </svg>
-                </div>
-            </div>
+    <!-- 디자인 팝업 -->
+    <div class="popup-bg"></div>
+    <div class="design-popup popup-box">
+        <button class="btn-close"></button>
+        <div class="popup-button">
+            <button class="left"></button>
+            <button class="right"></button>
         </div>
-    </div> -->
+        <ul class="popup-items">
+            <li class="popup-item item1">
+                <div class="popup-img img-ver">
+                    <img src="./resource/design-kyobo.png" alt="교보문고 리디자인">
+                </div>
+            </li>
+            <li class="popup-item  item2">
+                <div class="popup-img img-ver">
+                    <img src="./resource/site-coca-img.png" alt="코카콜라 리디자인">
+                </div>
+            </li>
+        </ul>
+    </div>
 
     <!-- 본문 섹션 -->
     <div class="wrap">
-        <!-- 인트로 -->
-        <header class="intro puzzle-bg-v1 section-page actived-on-visible">
+        <!-- 인트로 페이지 -->
+        <header class="intro puzzle-bg-v1 section-page actived-on-visible" data-page-index="0">
             <div class="con flex">
                 <h2 class="title flex-column line-height-0">
                     <span class="sound-only">WEB PUBLISHER/DESIGNER</span>
@@ -208,7 +186,7 @@
         </header>
 
         <!-- 소개 페이지 -->
-        <section class="about section-page actived-on-visible" data-active-on-visible-diff-y="100">
+        <section class="about section-page actived-on-visible" data-page-index="1">
             <div class="bg">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1419 969">
                     <style>
@@ -454,134 +432,323 @@
         </section>
 
         <!-- 웹사이트 포트폴리오 -->
-        <section class="portfolio flex section-page con actived-on-visible">
-            <div class="content-box flex-column flex-grow-1">
-                <h2 class="title font-Fredericka fs-title2">
-                    <div class="inline-block relative">
-                        <span class="txt-front inline-block">Portfolio</span>
-                        <i class="page-title-line t-line1"></i>
-                        <i class="page-title-line t-line2"></i>
-                        <i class="page-title-line t-line3"></i>
-                    </div>
-                </h2>
-                <div class="pf-content">
-                    <ul class="pf-items">
-                        <li class="pf-item">
-                            <h3 class="pf-item-title">COCACOLA</h3>
-                            <div class="pf-item-bar flex">
-                                <div class="tag">
-                                    <img src="./resource/icon-redesign.svg" alt="">
+        <section class="portfolio section-page actived-on-visible puzzle-bg-v2" data-page-index="2">
+            <div class="wrap flex con">
+                <div class="content-box relative flex-grow-1">
+                    <!-- 포트폴리오 타이틀 -->
+                    <h2 class="title font-Fredericka fs-title2">
+                        <div class="inline-block relative">
+                            <span class="txt-front inline-block">Portfolio</span>
+                            <i class="page-title-line t-line1"></i>
+                            <i class="page-title-line t-line2"></i>
+                            <i class="page-title-line t-line3"></i>
+                        </div>
+                    </h2>
+                    <!-- 포트폴리오 아이템 텍스트 박스 -->
+                    <div class="pf-content">
+                        <ul class="pf-items">
+                            <li class="pf-item active">
+                                <h3 class="pf-item-title">COCACOLA</h3>
+                                <div class="pf-item-bar flex">
+                                    <div class="tag">
+                                        <img src="./resource/icon-redesign.svg" alt="">
+                                    </div>
+                                    <ul class="color-list flex-ai-c">
+                                        <li class="item-color" style="background-color: #000000;"></li>
+                                        <li class="item-color" style="background-color: #F40009;"></li>
+                                        <li class="item-color" style="background-color: #ffffff;"></li>
+                                    </ul>
                                 </div>
-                                <ul class="color-list flex-ai-c">
-                                    <li class="item-color" style="background-color: #000000;"></li>
-                                    <li class="item-color" style="background-color: #F40009;"></li>
-                                </ul>
+                                <div class="pf-item-body">
+                                    <p>
+                                        기존의 cocacola company 사이트의 불편한 사이트의 구성과 요소들을 제거하고
+                                        코카콜라의 아이덴티티를 살린 디자인을 컨셉으로 잡고 진행 했습니다.
+                                        코카콜라의 색상을 포인트로 화면을 구성하고 페이지에 맞는 모양의 디자인을 사용해서
+                                        단조로움을 피하는 디자인을 진행 했습니다.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="pf-item">
+                                <h3 class="pf-item-title">ARTFIVE</h3>
+                                <div class="pf-item-bar flex">
+                                    <div class="tag">
+                                        <img src="./resource/icon-redesign.svg" alt="">
+                                    </div>
+                                    <ul class="color-list flex-ai-c">
+                                        <li class="item-color" style="background-color: #000000;"></li>
+                                        <li class="item-color" style="background-color: #ADADAD;"></li>
+                                        <li class="item-color" style="background-color: #ffffff;"></li>
+                                    </ul>
+                                </div>
+                                <div class="pf-item-body">
+                                    <p>
+                                        원페이지 스크롤 방식을 직접 구현해보기 위해서 홈페이지를 선정하였습니다.
+                                        숫자 증가 기능과 2개의 슬라이드 방식을 시험해 볼 수 있었습니다.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="pf-item">
+                                <h3 class="pf-item-title">DESIGNPIXEL</h3>
+                                <div class="pf-item-bar flex">
+                                    <div class="tag">
+                                        <img src="./resource/icon-redesign.svg" alt="">
+                                    </div>
+                                    <ul class="color-list flex-ai-c">
+                                        <li class="item-color" style="background-color: #000000;"></li>
+                                        <li class="item-color" style="background-color: #F9253B;"></li>
+                                        <li class="item-color" style="background-color: #ffffff;"></li>
+                                    </ul>
+                                </div>
+                                <div class="pf-item-body">
+                                    <p>
+                                        DESIGN PIXEL 사이트의 슬라이드 방식과 애니메이션 등을 구현해보기 위해 선정하여 사이트를 구현했습니다.
+                                        세로 방식의 정렬과 다양한 애니메이션들을 구사해 볼 수 있었습니다.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="pf-item">
+                                <h3 class="pf-item-title">HEIMISH</h3>
+                                <div class="pf-item-bar flex">
+                                    <div class="tag">
+                                        <img src="./resource/icon-redesign.svg" alt="">
+                                    </div>
+                                    <ul class="color-list flex-ai-c">
+                                        <li class="item-color" style="background-color: #000000;"></li>
+                                        <li class="item-color" style="background-color: #5E5F61;"></li>
+                                        <li class="item-color" style="background-color: #E4C1BE;"></li>
+                                        <li class="item-color" style="background-color: #FFFFFF;"></li>
+                                    </ul>
+                                </div>
+                                <div class="pf-item-body">
+                                    <p>
+                                        원페이지 스크롤 방식을 직접 구현하고 탭박스 형식의 슬라이드를 구현하기 위해서 선정하였습니다.
+                                        첫 원페이지 방식의 구현이라 완벽하지 않지만 다양한 기능을 배울 수 있었습니다.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="pf-item">
+                                <h3 class="pf-item-title">CLEADERM</h3>
+                                <div class="pf-item-bar flex">
+                                    <div class="tag">
+                                        <img src="./resource/icon-redesign.svg" alt="">
+                                    </div>
+                                    <ul class="color-list flex-ai-c">
+                                        <li class="item-color" style="background-color: #000000;"></li>
+                                        <li class="item-color" style="background-color: #FE9554;"></li>
+                                        <li class="item-color" style="background-color: #4AC3CB;"></li>
+                                        <li class="item-color" style="background-color: #ffffff;"></li>
+                                    </ul>
+                                </div>
+                                <div class="pf-item-body">
+                                    <p>
+                                        첫 카피 사이트로 opacity방식의 슬라이드와 구현했습니다.
+                                        요소 발견 애니메이션도 구현해 볼 수 있었습니다.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 포트폴리오 슬라이드 박스 -->
+                    <div class="pf-slide-box">
+                        <div class="pf-tab-bar flex-jc-end flex-ai-c font-noto">
+                            <div class="btn-bg-bar">
+                                <div class="left">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.41 39.51">
+                                        <path class="icon-left" d="M32.41,0a9,9,0,0,0-9,9V25.75S21.83,39.51,0,39.51H32.41Z" />
+                                    </svg>
+                                </div>
+                                <div class="right">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.41 39.51">
+                                        <path class="icon-right" d="M9,25.75V9A9,9,0,0,0,0,0V39.51H32.41C10.58,39.51,9,25.75,9,25.75Z" />
+                                    </svg>
+                                </div>
                             </div>
-                            <div class="pf-item-body">
-                                <p>
-                                    기존의 cocacola company 사이트의 불편한 사이트의 구성과 요소들을 제거하고
-                                    코카콜라의 아이덴티티를 살린 디자인을 컨셉으로 잡고 진행 했습니다.
-                                    코카콜라의 색상을 포인트로 화면을 구성하고 페이지에 맞는 모양의 디자인을 사용해서
-                                    단조로움을 피하는 디자인을 진행 했습니다.
-                                </p>
+                            <button class="pf-tab-btn btn-all">ALL</button>
+                            <button class="pf-tab-btn btn-redesign">REDESIGN</button>
+                            <button class="pf-tab-btn btn-copy">COPY</button>
+                        </div>
+                        <div class="pf-slide" dir="rtl">
+                            <div class="item item1 active" data-item-tab="1" data-slide-index="01"></div>
+                            <div class="item item2" data-item-tab="2" data-slide-index="02"></div>
+                            <div class="item item3" data-item-tab="2" data-slide-index="03"></div>
+                            <div class="item item4" data-item-tab="2" data-slide-index="04"></div>
+                            <div class="item item5" data-item-tab="2" data-slide-index="05"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 포트폴리오 아이템 이미지 박스 -->
+                <div class="portfolio-img-box">
+                    <ul class="pf-img-list">
+                        <li class="pf-img active" style="background-image:url(./resource/site-coca-img.png)">
+                            <a href="#"></a>
+                            <div class="btn-box flex">
+                                <button class="btn-origin">
+                                    <a class="font-noto" href="#">ORIGINAL</a>
+                                </button>
+                                <button class="btn-demo">
+                                    <a class="font-noto" href="#">DEMO</a>
+                                </button>
+                            </div>
+                        </li>
+                        <li class="pf-img" style="background-image:url(./resource/site-artfive-img.png)">
+                            <a href="#"></a>
+                            <div class="btn-box flex">
+                                <button class="btn-origin">
+                                    <a class="font-noto" href="#">ORIGINAL</a>
+                                </button>
+                                <button class="btn-demo">
+                                    <a class="font-noto" href="#">DEMO</a>
+                                </button>
+                            </div>
+                        </li>
+                        <li class="pf-img" style="background-image:url(./resource/site-designpixel-img.png)">
+                            <a href="#"></a>
+                            <div class="btn-box flex">
+                                <button class="btn-origin">
+                                    <a class="font-noto" href="#">ORIGINAL</a>
+                                </button>
+                                <button class="btn-demo">
+                                    <a class="font-noto" href="#">DEMO</a>
+                                </button>
+                            </div>
+                        </li>
+                        <li class="pf-img" style="background-image:url(./resource/site-heimish-img.png)">
+                            <a href="#"></a>
+                            <div class="btn-box flex">
+                                <button class="btn-origin">
+                                    <a class="font-noto" href="#">ORIGINAL</a>
+                                </button>
+                                <button class="btn-demo">
+                                    <a class="font-noto" href="#">DEMO</a>
+                                </button>
+                            </div>
+                        </li>
+                        <li class="pf-img" style="background-image:url(./resource/site-cleaderm-img.png)">
+                            <a href="#"></a>
+                            <div class="btn-box flex">
+                                <button class="btn-origin">
+                                    <a class="font-noto" href="#">ORIGINAL</a>
+                                </button>
+                                <button class="btn-demo">
+                                    <a class="font-noto" href="#">DEMO</a>
+                                </button>
                             </div>
                         </li>
                     </ul>
                 </div>
-                <div class="pf-slide-box">
-                    <div class="btn-bg-bar"></div>
-                    <div class="pf-tab-bar flex-jc-end flex-ai-c font-noto">
-                        <div class="pf-tab-btn btn-all">ALL</div>
-                        <div class="pf-tab-btn btn-redesign">REDESIGN</div>
-                        <div class="pf-tab-btn btn-copy">COPY</div>
-                    </div>
-                    <div class="pf-slide" dir="rtl">
-                        <div class="item" data-item-tab="1" style="background-image:url('./resource/cocacola-img.png');"></div>
-                        <div class="item" data-item-tab="2" style="background-image:url('./resource/artfive-img.png');"></div>
-                        <div class="item" data-item-tab="2" style="background-image:url('./resource/designpixel-img.png');"></div>
-                        <div class="item" data-item-tab="2" style="background-image:url('./resource/heimish-img.png');"></div>
-                        <div class="item" data-item-tab="2" style="background-image:url('./resource/cleaderm-img.png');"></div>
-                    </div>
-                </div>
             </div>
-            <div class="portfolio-img-box">
-                <ul class="pf-img-list">
-                    <li class="pf-img" style="background-image:url(./resource/site-coca-img.png)"><a href="#"></a></li>                    
-                </ul>
+            <div class="slide-index">
             </div>
         </section>
 
         <!-- 디자인 포트폴리오 -->
-        <section class="design section-page flex actived-on-visible">
-            <h2 class="title font-Fredericka fs-title2">
-                <span>“Design”</span>
-            </h2>
-            <div class="slider slick-slider1">
-                <div class="slick-item">
-                    <div class="flex">
-                        <div class="img flex-shrink-0"></div>
-                        <ul class="txt">
-                            <li class="title font-noto fs-subtitle2">교보문고 리디자인</li>
-                            <li class="tag flex">
-                                <div class="tag-icon">
-                                    <img src="https://nixpluvia.github.io/img1/pf/portfolio/icon-copy.svg" alt="">
-                                </div>
-                                <div class="tag-icon">
-                                    <img src="https://nixpluvia.github.io/img1/pf/portfolio/icon-redesign.svg" alt="">
-                                </div>
-                            </li>
-                            <li class="txt-body font-noto">
-                                <p>
-                                    기존의 교보문고 e-book 디자인의 문제점인 너무 많은 내용을 담고 있다는 점을 토대로
-                                    직장인과 학생들을 타겟으로 최대한의 불필요한 정보를 배제하고
-                                    간편하게 즐길 수 있도록 컨셉을 잡았습니다.
-                                    그 후 브로앤팁스 사이트의 디자인을 참고해서 리디자인을 진행 했습니다.
-                                </p>
-                            </li>
-                            <li class="source font-noto">
-                                <span class="fs-txt2">디자인 출처 : </span>
-                                <span class="fs-txt2"><a href="https://brontips.com/">브로앤팁스</a></span>
-                            </li>
-                        </ul>
-                        <div class="bg-img"></div>
+        <section class="design section-page actived-on-visible" data-page-index="3">
+            <div class="wrap flex">
+                <div class="content-info">
+                    <h2 class="title font-Fredericka fs-title2">
+                        <div class="inline-block relative">
+                            <span class="txt-front inline-block">Design</span>
+                            <i class="page-title-line t-line1"></i>
+                            <i class="page-title-line t-line2"></i>
+                            <i class="page-title-line t-line3"></i>
+                        </div>
+                    </h2>
+                    <div class="design-slide-arrows flex">
                     </div>
                 </div>
-                <div class="slick-item">
-                    <div class="flex">
-                        <div class="img flex-shrink-0"></div>
-                        <ul class="txt">
-                            <li class="title font-noto fs-subtitle2">코카콜라 리디자인</li>
-                            <li class="tag flex">
-                                <div class="tag-icon">
-                                    <img src="https://nixpluvia.github.io/img1/pf/portfolio/icon-copy.svg" alt="">
+                <!-- 디자인 슬라이드 -->
+                <div class="slider slick-slider1">
+                    <div class="slick-item">
+                        <div class="flex">
+                            <div class="img flex-shrink-0 btn-popup-item" data-popup-index="0"></div>
+                            <div class="item-content">
+                                <ul class="txt">
+                                    <li class="title font-noto fs-subtitle2">교보문고 리디자인</li>
+                                    <li class="tag flex">
+                                        <div class="tag-icon">
+                                            <img src="https://nixpluvia.github.io/img1/pf/portfolio/icon-redesign.svg" alt="">
+                                        </div>
+                                        <ul class="color-list flex-ai-c">
+                                            <li class="item-color" style="background-color: #231815;"></li>
+                                            <li class="item-color" style="background-color: #32B432;"></li>
+                                            <li class="item-color" style="background-color: #F7F2ED;"></li>
+                                            <li class="item-color" style="background-color: #FFFFFF;"></li>
+                                        </ul>
+                                    </li>
+                                    <li class="txt-body font-noto">
+                                        <p>
+                                            기존의 교보문고 e-book 디자인의 문제점으로 너무 많은 내용을 담고 있고 내용의 중복으로
+                                            사이트의 이용의 피로를 느끼게 되어있었습니다. ebook 사이트의 주요 이용자가 20~30대 학생과 
+                                            직장인이고 생활에 지친 직장인과 학생들을 타겟으로 최대한의 불필요한 정보를 배제하고 간편하게
+                                            즐길 수 있도록 컨셉을 잡았습니다. 이런 컨셉과 디자인에 부합하는 브로앤팁스 사이트의 디자인을 
+                                            참고해서 리디자인을 진행 했습니다.
+                                        </p>
+                                    </li>
+                                    <li class="source font-noto">
+                                        <span class="fs-txt2">디자인 출처 : </span>
+                                        <span class="fs-txt2"><a href="https://brontips.com/">브로앤팁스</a></span>
+                                    </li>
+                                </ul>
+                                <div class="bg-img">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 119.74 161.35">
+                                        <path class="bg-design-puzzle"
+                                            d="M101.93,0c-.18.05-4.52,1.28-5.21,4.7A6.94,6.94,0,0,0,98,10.07a19.65,19.65,0,0,1,3.54,11.57,20.64,20.64,0,1,1-41.27,0,19.64,19.64,0,0,1,3.55-11.58,6.86,6.86,0,0,0,1.29-5.34c-.69-3.42-5-4.65-5.21-4.7L0,0V59.79l0,.13c.05.18,1.28,4.52,4.69,5.21a6.87,6.87,0,0,0,5.36-1.3,19.65,19.65,0,0,1,11.57-3.54,20.64,20.64,0,0,1,0,41.27A19.64,19.64,0,0,1,10.06,98a6.88,6.88,0,0,0-5.35-1.29c-3.41.69-4.64,5-4.69,5.21l0,59.42H119.74V0H102.06Z" />
+                                    </svg>
                                 </div>
-                                <div class="tag-icon">
-                                    <img src="https://nixpluvia.github.io/img1/pf/portfolio/icon-redesign.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slick-item">
+                        <div class="flex">
+                            <div class="img flex-shrink-0 btn-popup-item" data-popup-index="1"></div>
+                            <div class="item-content">
+                                <ul class="txt">
+                                    <li class="title font-noto fs-subtitle2">코카콜라 리디자인</li>
+                                    <li class="tag flex">
+                                        <div class="tag-icon">
+                                            <img src="https://nixpluvia.github.io/img1/pf/portfolio/icon-redesign.svg" alt="">
+                                        </div>
+                                        <ul class="color-list flex-ai-c">
+                                            <li class="item-color" style="background-color: #000000;"></li>
+                                            <li class="item-color" style="background-color: #F40009;"></li>
+                                            <li class="item-color" style="background-color: #ffffff;"></li>
+                                        </ul>
+                                    </li>
+                                    <li class="txt-body font-noto">
+                                        <p>
+                                            기존의 cocacola company 사이트의 불편한 사이트의 구성과 요소들을 제거하고
+                                            코카콜라의 아이덴티티를 살린 디자인을 컨셉으로 잡고 진행 했습니다.
+                                            코카콜라의 색상을 포인트로 화면을 구성하고 페이지에 맞는 모양의 디자인을 사용해서
+                                            단조로움을 피하는 디자인을 진행 했습니다.
+                                        </p>
+                                    </li>
+                                    <li class="source font-noto">
+                                        <span class="fs-txt2">디자인 출처 : </span>
+                                        <span class="fs-txt2">창작</span>
+                                    </li>
+                                </ul>
+                                <div class="bg-img">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 119.74 161.35">
+                                        <path class="bg-design-puzzle"
+                                            d="M101.93,0c-.18.05-4.52,1.28-5.21,4.7A6.94,6.94,0,0,0,98,10.07a19.65,19.65,0,0,1,3.54,11.57,20.64,20.64,0,1,1-41.27,0,19.64,19.64,0,0,1,3.55-11.58,6.86,6.86,0,0,0,1.29-5.34c-.69-3.42-5-4.65-5.21-4.7L0,0V59.79l0,.13c.05.18,1.28,4.52,4.69,5.21a6.87,6.87,0,0,0,5.36-1.3,19.65,19.65,0,0,1,11.57-3.54,20.64,20.64,0,0,1,0,41.27A19.64,19.64,0,0,1,10.06,98a6.88,6.88,0,0,0-5.35-1.29c-3.41.69-4.64,5-4.69,5.21l0,59.42H119.74V0H102.06Z" />
+                                    </svg>
                                 </div>
-                            </li>
-                            <li class="txt-body font-noto">
-                                <p>
-                                    기존의 cocacola company 사이트의 불편한 사이트의 구성과 요소들을 제거하고
-                                    코카콜라의 아이덴티티를 살린 디자인을 컨셉으로 잡고 진행 했습니다.
-                                    코카콜라의 색상을 포인트로 화면을 구성하고 페이지에 맞는 모양의 디자인을 사용해서
-                                    단조로움을 피하는 디자인을 진행 했습니다.
-                                </p>
-                            </li>
-                            <li class="source font-noto">
-                                <span class="fs-txt2">디자인 출처 : </span>
-                                <span class="fs-txt2">창작</span>
-                            </li>
-                        </ul>
-                        <div class="bg-img"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- contact -->
-        <section class="contact section-page con actived-on-visible">
+        <!-- 문의 페이지 -->
+        <section class="contact section-page con actived-on-visible" data-page-index="4">
             <h2 class="title font-Fredericka fs-title2">
-                <span>Contact</span>
+                <div class="inline-block relative">
+                    <span class="txt-front inline-block">Contact</span>
+                    <i class="page-title-line t-line1"></i>
+                    <i class="page-title-line t-line2"></i>
+                    <i class="page-title-line t-line3"></i>
+                </div>
             </h2>
             <div class="content flex">
                 <div class="send-mail">
@@ -656,7 +823,7 @@
                                         </g>
                                     </svg>
                                 </div>
-                                <h2 class="font-cookie">작지만 빠져서는 안되는 퍼즐 한 조각 처럼</h2>
+                                <h2 class="font-Gyeonggi">작지만 빠져서는 안되는 퍼즐 한 조각 처럼</h2>
                                 <div class="flex-jc-end font-Fredericka">
                                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -716,15 +883,15 @@
                         <div class="myself-info">
                             <ul>
                                 <li class="info-blog">
-                                    <span>Blog</span>
-                                    <span class="font-noto"><a href="https://nix.blog.oa.ogg">nix.blog.oa.gg</a></span>
+                                    <span class="font-noto">Site</span>
+                                    <span class="font-noto"><a href="https://nix.blog.oa.ogg">blog.nixpluvia.com</a></span>
                                 </li>
                                 <li class="info-email">
-                                    <span>Email</span>
+                                    <span class="font-noto">E-Mail</span>
                                     <span class="font-noto">whbear12@gmail.com</span>
                                 </li>
                                 <li class="info-number">
-                                    <span>Number</span>
+                                    <span class="font-noto">Number</span>
                                     <span class="font-noto">010-9553-3855</span>
                                 </li>
                             </ul>
@@ -736,7 +903,7 @@
                                         target="_blank">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49.78 35">
                                             <g>
-                                                <path
+                                                <path class="sns-icon-path"
                                                     d="M48.74,5.48a6.23,6.23,0,0,0-4.4-4.43C40.45,0,24.89,0,24.89,0S9.32,0,5.44,1.05A6.23,6.23,0,0,0,1,5.48C0,9.38,0,17.54,0,17.54s0,8.15,1,12.05A6.14,6.14,0,0,0,5.44,34c3.88,1,19.45,1,19.45,1s15.56,0,19.45-1a6.14,6.14,0,0,0,4.4-4.36c1-3.9,1-12,1-12S49.78,9.38,48.74,5.48ZM19.8,24.94V10.13l13,7.41-13,7.4Z" />
                                             </g>
                                         </svg>
@@ -746,7 +913,7 @@
                                     <a href="https://github.com/nixpluvia" target="_blank">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.9 35">
                                             <g id="contact">
-                                                <path
+                                                <path class="sns-icon-path"
                                                     d="M12,28.18c0,.15-.17.26-.38.26s-.4-.09-.4-.26.16-.26.37-.26S12,28,12,28.18Zm-2.25-.32c0,.14.09.31.31.35a.35.35,0,0,0,.45-.14c0-.15-.1-.32-.32-.38a.36.36,0,0,0-.44.17ZM13,27.73c-.21.05-.35.19-.33.36s.21.24.43.19.35-.19.33-.34S13.16,27.71,13,27.73ZM17.72,0A17.36,17.36,0,0,0,0,17.66,18.14,18.14,0,0,0,12.27,35c.92.17,1.25-.4,1.25-.88s0-2.92,0-4.44c0,0-5.07,1.09-6.13-2.16,0,0-.83-2.1-2-2.64,0,0-1.66-1.14.11-1.12A3.83,3.83,0,0,1,8.26,25.6a3.83,3.83,0,0,0,5.28,1.51,4.05,4.05,0,0,1,1.16-2.44c-4-.45-8.13-1-8.13-8a5.48,5.48,0,0,1,1.71-4.26A6.83,6.83,0,0,1,8.47,7.5c1.51-.47,5,1.95,5,1.95a17.24,17.24,0,0,1,9.09,0S26,7,27.55,7.5a6.8,6.8,0,0,1,.18,4.91,5.62,5.62,0,0,1,1.87,4.26c0,7-4.26,7.55-8.31,8A4.27,4.27,0,0,1,22.52,28c0,2.44,0,5.46,0,6s.33,1,1.25.88A18,18,0,0,0,35.9,17.66C35.9,7.62,27.75,0,17.72,0ZM7,25c-.09.07-.07.24.06.38s.28.16.37.07.07-.24,0-.38A.29.29,0,0,0,7,25Zm-.78-.58c0,.09,0,.21.17.28a.22.22,0,0,0,.31-.05c0-.1,0-.21-.17-.29S6.3,24.3,6.25,24.38ZM8.6,27c-.12.1-.07.31.09.45s.38.19.47.07.05-.31-.09-.45S8.69,26.84,8.6,27Zm-.83-1.06c-.11.07-.11.26,0,.42s.31.24.41.17a.34.34,0,0,0,0-.45c-.1-.16-.29-.24-.41-.14Z" />
                                             </g>
                                         </svg>
@@ -756,11 +923,11 @@
                                     <a href="https://nixpluvia.tistory.com/" target="_blank">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35">
                                             <g>
-                                                <circle cx="4.39" cy="4.39" r="4.39" />
-                                                <circle cx="17.5" cy="4.39" r="4.39" />
-                                                <circle cx="30.61" cy="4.39" r="4.39" />
-                                                <circle cx="17.5" cy="17.5" r="4.39" />
-                                                <circle cx="17.5" cy="30.61" r="4.39" />
+                                                <circle class="sns-icon-path" cx="4.39" cy="4.39" r="4.39" />
+                                                <circle class="sns-icon-path" cx="17.5" cy="4.39" r="4.39" />
+                                                <circle class="sns-icon-path" cx="30.61" cy="4.39" r="4.39" />
+                                                <circle class="sns-icon-path" cx="17.5" cy="17.5" r="4.39" />
+                                                <circle class="sns-icon-path" cx="17.5" cy="30.61" r="4.39" />
                                             </g>
                                         </svg>
                                     </a>
@@ -774,8 +941,8 @@
     </div>
     
     <!-- footer 바 -->
-    <footer class="con">
-        <h2 class="font-noto">본 사이트는 상업적 목적이 아닌 개인 포트폴리오 사이트로 제작되었습니다.</h2>
+    <footer>
+        <h2 class="sound-only">본 사이트는 상업적 목적이 아닌 개인 포트폴리오 사이트로 제작되었습니다.</h2>
     </footer>
 </body>
 

@@ -10,7 +10,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 /* Montserrat 폰트 */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
+.font-Gyeonggi {
+    font-family: 'GyeonggiBatang'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GyeonggiBatang.woff') format('woff'); font-weight: normal; font-style: normal;
+}
 html {
     font-family: 'Roboto', 'Noto Sans KR', sans-serif;
 }
@@ -301,11 +303,11 @@ button {
 .font-mont {
     font-family: 'Montserrat', sans-serif;
 }
-
 /* custom */
 
 
 .con {
+    box-sizing: border-box;
     max-width: 1500px;
 }
 
@@ -344,7 +346,13 @@ body::-webkit-scrollbar {
 .quotes,
 .icon-scroll-path,
 .cls-1,
-.tag-icon {
+.tag-icon,
+.icon-left,
+.icon-right,
+.arrow-left,
+.arrow-right,
+.bg-design-puzzle,
+.sns-icon-path {
     fill: #2D2924;
 }
 
@@ -392,8 +400,8 @@ body::-webkit-scrollbar {
 .side-bar {
     position: fixed;
     top: 0;
-    left: calc(-30vw + 72px);
-    width: 30vw;
+    left: calc(-384px + 72px);
+    width: 384px;
     height: 100vh;
     background-color: #2D2924;
     box-sizing: border-box;
@@ -402,8 +410,8 @@ body::-webkit-scrollbar {
 .side-shadow {
     position: fixed;
     top: 0;
-    left: calc(-30vw + 72px);
-    width: 30vw;
+    left: calc(-384px + 72px);
+    width: 384px;
     height: 100vh;
     box-sizing: border-box;
     box-shadow: 5px 0 10px #A0A0A0;
@@ -427,7 +435,7 @@ body::-webkit-scrollbar {
 
 @keyframes open-ani {
     0% {
-        left: calc(-30vw + 72px);
+        left: calc(-384px + 72px);
     }
 
     100% {
@@ -441,7 +449,7 @@ body::-webkit-scrollbar {
     }
 
     100% {
-        left: calc(-30vw + 72px);
+        left: calc(-384px + 72px);
     }
 }
 
@@ -471,6 +479,10 @@ body::-webkit-scrollbar {
     width: 100%;
     height: 8px;
     background-color: #B3B3B3;
+    transition: background 0.3s;
+}
+.side-bar .btn-side-bar:hover>div {
+    background-color: #ffffff;
 }
 
 .side-bar .btn-side-bar>div:nth-child(1) {
@@ -507,14 +519,67 @@ body::-webkit-scrollbar {
 .side-bar .side-bar-menu>ul>li+li {
     margin-top: 20px;
 }
-
-.side-bar .side-bar-menu>ul>li {
+.side-bar .side-bar-menu>ul>li>span {
+    position: relative;
+    display: inline-block;
     font-size: 3.2rem;
     line-height: 3.2rem;
     color: #ffffff;
     cursor: pointer;
 }
+.side-bar .side-bar-menu>ul>li>span::after {
+    content:"";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #ffffff;
+    transition: width 0.45s;
+}
+.side-bar .side-bar-menu>ul>li>span:hover::after {
+    width: 100%;
+}
+
+.side-bar .site-info {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    line-height: 14px;
+    color: #A0A0A0;
+    white-space: nowrap;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.6s, visibility 0s 0.6s;
+}
+.side-bar.active .site-info{
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.6s, visibility 0s;
+}
+
+
+
+
+
+
+
+
+
 /* 사이드 바 끝*/
+
+
+
+[data-dot-page-index="0"] .pagenation>ul>li{
+    background: #ffffff;
+}
+
+[data-dot-page-index="3"] .pagenation>ul>li{
+    background: #ffffff;
+}
+
 
 
 
@@ -522,7 +587,7 @@ body::-webkit-scrollbar {
 .pagenation {
     position: fixed;
     top: 50%;
-    right: 5%;
+    right: 2%;
     transform: translateY(-50%);
     z-index: 100;
 }
@@ -607,15 +672,15 @@ section {
 .puzzle-bg-v1::before {
     top: 0;
     left: 0;
-    width: 578px;
-    height: 603px;
+    width: 30.104166666666668vw;
+    height: 31.40625vw;
     background-image: url(./resource/bg-puzzle2.png);
 }
 .puzzle-bg-v1::after,.puzzle-bg-v2::after {
     bottom: 0;
     right: 0;
-    width: 699px;
-    height: 891px;
+    width: 36.40625vw;
+    height: 46.40625vw;
     background-image: url(./resource/bg-puzzle.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -623,8 +688,8 @@ section {
 .puzzle-bg-v3::after{
     bottom: 0;
     left: 0;
-    width: 699px;
-    height: 891px;
+    width: 36.40625vw;
+    height: 46.40625vw;
     transform: scaleX(-1);
 }
 
@@ -685,11 +750,20 @@ section {
     font-size: 142px;
     line-height: 142px;
 }
+.intro .title>div>i {
+    opacity: 0;
+}
 .intro .title>div:nth-of-type(1)>span {
     animation: element-opacity 1s 0.5s forwards;
 }
+.intro .title>div:nth-of-type(1)>i {
+    animation: element-opacity 1s 0.8s forwards;
+}
 .intro .title>div:nth-of-type(2)>span {
     animation: element-opacity 1s 1s forwards;
+}
+.intro .title>div:nth-of-type(2)>i {
+    animation: element-opacity 1s 1.3s forwards;
 }
 @keyframes element-opacity {
     0% {
@@ -822,13 +896,17 @@ section {
 /* 어바웃 페이지 */
 .about {
     position: relative;
+    height: 100vh;
 }
 .about > .bg {
     position: absolute;
     top: 0;
     left: 0;
-    width: 73.90625%;
+    height: 100%;
     z-index: -1;
+}
+.about > .bg > svg{
+    height: 100%;
 }
 
 .about .title {
@@ -945,7 +1023,7 @@ section {
     width: 100%;
 }
 .about .skills-box>div+div{
-    margin-top: 10px;
+    padding-top: 14px;
 }
 
 .about .skills-box>.skill>div+div {
@@ -979,6 +1057,7 @@ section {
     position: relative;
     width: 100%;
     height: 4px;
+    margin-bottom: 3px;
     background-color: #C1C1C1;
 }
 
@@ -1035,15 +1114,38 @@ section {
 
 /* 포트폴리오 섹션 */
 .portfolio {
-    padding-top: 20.63983488132095vh;
+    position: relative;
+    margin-top:20.63983488132095vh;
+    padding-bottom: 20.63983488132095vh;
+    height: 100vh;
+    box-sizing: content-box;
+}
+.portfolio::after{
+    z-index: -1;
+}
+.portfolio > .wrap {
+    width: 100%;
+    height: 100%;
 }
 
+.portfolio .slide-index{
+    position: absolute;
+}
 
 /* 포트폴리오 섹션 - 타이틀*/
-.portfolio>.content-box .title{
+.portfolio .content-box .title{
     padding: 15.479876160990711vh 0;
 }
 
+/* 포트폴리오 컨텐츠 아이템 */
+.portfolio .pf-content .pf-item{
+    display: none;
+}
+.portfolio .pf-content .pf-item.active{
+    display: block;
+}
+
+/* 포트폴리오 컨텐츠 아이템 타이틀 */
 .portfolio .pf-content .pf-item-title{
     font-size:3.6rem;
     line-height: 3.6rem;
@@ -1051,6 +1153,8 @@ section {
     letter-spacing: 1px;
     padding-bottom: 3.611971104231166vh;
 }
+
+/* 포트폴리오 컨텐츠 아이템 정보 바 */
 .portfolio .pf-content .pf-item-bar {
     margin-bottom: 4.953560371517028vh;
 }
@@ -1061,18 +1165,23 @@ section {
     display: block;
     height: 100%;
 }
-.portfolio .pf-content .color-list {
+
+/* 포트폴리오, 디자인 컬러 리스트 */
+.color-list {
     margin-left: 21px;
 }
-.portfolio .pf-content .color-list > li{
+.color-list > li{
     width: 15px;
     height: 15px;
     border-radius: 50%;
+    box-sizing: border-box;
+    border: 2px solid #2D2924;
 }
-.portfolio .pf-content .color-list > li+li{
+.color-list > li+li{
     margin-left: 6px;
 }
 
+/* 포트폴리오 컨텐츠 아이템 본문 */
 .portfolio .pf-content .pf-item-body {
     max-width: 465px;
 }
@@ -1082,11 +1191,15 @@ section {
 }
 
 
+
+
+
 /* 포트폴리오 이미지 박스 */
 .portfolio .portfolio-img-box{
     width: 586px;
     height: 100vh;
-    background-color: green;
+    padding-top: 7vh;
+    box-sizing: border-box;
 }
 .portfolio .portfolio-img-box ul{
     position: relative;
@@ -1102,7 +1215,11 @@ section {
     background-position: left top;
     background-repeat: no-repeat;
     background-size: cover;
+    visibility: hidden;
     transition: background 3s;
+}
+.portfolio .portfolio-img-box ul > li.active{
+    visibility: visible;
 }
 .portfolio .portfolio-img-box ul > li > a{
     display: block;
@@ -1112,49 +1229,112 @@ section {
     background-position: left bottom;
 }
 
-
-
-/* 포트폴리오 슬라이드 탭 버튼 */
-.portfolio .pf-slide-box {
-    margin-top: auto;
-    margin-left: -110px;
-    max-width: 980px;
-    width: calc(100% + 66px);
-    overflow: hidden;
+/* 포트폴리오 링크 버튼 */
+.portfolio .portfolio-img-box .btn-box {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    z-index: 20;
+}
+.portfolio .portfolio-img-box .btn-box button+button{
+    margin-left: 10px;
+}
+.portfolio .portfolio-img-box .btn-box button{
+    width: 100px;
+    height: 40px;
+}
+.portfolio .portfolio-img-box .btn-box button a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 13px;
+    line-height: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+}
+.portfolio .portfolio-img-box .btn-box .btn-origin{
+    background-color: #2D2924;
+}
+.portfolio .portfolio-img-box .btn-box .btn-demo{
+    background-color: #FFB000;
 }
 
+
+
+
+
+
+
+
+
+/* 포트폴리오 슬라이드 박스 */
+.portfolio .pf-slide-box {
+    position: absolute;
+    bottom: 0;
+    max-width: 980px;
+    width: calc(100% + 66px);
+    margin-left: -110px;
+}
+
+/* 포트폴리오 슬라이드 탭 버튼 */
 .portfolio .pf-tab-bar{
     position: relative;
     height: 39px;
     margin-bottom: 14px;
     border-bottom: 1px solid #2D2924;
+    overflow: hidden;
 }
-.portfolio .pf-tab-bar .btn-bg-bar {
-    position: absolute;
-    top: 0;
-    height: 100%;
-}
-
-.portfolio .pf-tab-bar > div+div{
-    margin-left: 50px;
-}
-.portfolio .pf-tab-bar > div:last-child {
+.portfolio .pf-tab-bar > .pf-tab-btn:last-child {
     margin-right: 10px;
 }
 .portfolio .pf-tab-bar .pf-tab-btn{
+    margin-left: 50px;
     font-size: 1.6rem;
     line-height: 1.6rem;
     font-weight: 500;
     color: #2D2924;
+    cursor: pointer;
 }
 .portfolio .pf-tab-bar .pf-tab-btn.active{
     color: #ffffff;
+    transition: color 0.3s 0.4s;
 }
 
-
+.portfolio .pf-tab-bar .btn-bg-bar {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: width 1s, right 1s;
+    background-color: #2D2924;
+    z-index: -1;
+}
+.portfolio .pf-tab-bar .btn-bg-bar > .left {
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 1px;
+    height: 100%;
+    transform: translateX(-100%);
+}
+.portfolio .pf-tab-bar .btn-bg-bar > .right {
+    content:"";
+    position: absolute;
+    top: 0;
+    right: 1px;
+    height: 100%;
+    transform: translateX(100%);
+}
+.portfolio .pf-tab-bar .btn-bg-bar > .left > svg,
+.portfolio .pf-tab-bar .btn-bg-bar > .right > svg {
+    height: 100%;
+}
 
 /* 포트폴리오 슬라이드 */
-.portfolio .pf-slide {
+.portfolio .slick-track {
+    right: 6px;
 }
 .portfolio .pf-slide .item + .item{
     margin-right: 20px;
@@ -1165,6 +1345,27 @@ section {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    box-sizing: border-box;
+    border: 3px solid #2D2924;
+    cursor: pointer;
+}
+.portfolio .pf-slide .item:hover{
+    border-color: #FFB000;
+}
+.portfolio .pf-slide .item1{
+    background-image:url('./resource/cocacola-img.png');
+}
+.portfolio .pf-slide .item2{
+    background-image:url('./resource/artfive-img.png');
+}
+.portfolio .pf-slide .item3{
+    background-image:url('./resource/designpixel-img.png');
+}
+.portfolio .pf-slide .item4{
+    background-image:url('./resource/heimish-img.png');
+}
+.portfolio .pf-slide .item5{
+    background-image:url('./resource/cleaderm-img.png');
 }
 
 
@@ -1176,178 +1377,59 @@ section {
 
 
 
-
-/* 포트폴리오 섹션 - 탭 박스 버튼 */
-.portfolio>.content-box>.head>button+button {
-    margin-left: 30px;
+/* 디자인 섹션 */
+.design {
+    height: 100vh;
+    background-color: #2D2924;
 }
-
-.portfolio>.content-box>.head>button>h2 {
-    font-weight: 500;
-}
-
-.portfolio>.content-box>.head>button.active>h2 {
-    color: #FFB000;
-}
-
-/* 포트폴리오 섹션 - 탭 박스 */
-.portfolio>.content-box>.body {
-    margin-top: 90px;
-    overflow-x: hidden;
-}
-
-.portfolio>.content-box>.body>ul {
-    margin-right: -3.5vw;
-    flex-wrap: wrap;
-}
-
-.portfolio>.content-box>.body>ul>li {
-    position: relative;
-    display: none;
-    width: calc(100% / 3);
-    padding-right: 3.5vw;
-    margin-bottom: 3.5vw;
+.design .wrap {
+    width: 100%;
+    margin-left: auto;
+    padding-top: 13.828689370485035vh;
+    max-width: calc(((100vw - 1500px) / 2) + 1500px);
     box-sizing: border-box;
 }
 
-.portfolio>.content-box>.body>ul>li.active {
-    display: block;
+.design .content-info {
+    padding-right: 6.25vw;
+    box-sizing: border-box;
+}
+/* 디자인 섹션 - 타이틀 */
+.design .content-info .title {
+    color: #ffffff;
 }
 
-/* 포트폴리오 섹션 - 탭 박스 아이템 */
-.portfolio>.content-box>.body>ul>li>.frame>img {
-    display: block;
-    filter: drop-shadow(5px 5px 7px #E6E6E6);
+/* 디자인 섹션  - 슬라이드 버튼 */
+.design .design-slide-arrows {
+    margin-top: 8.25593395252838vh; /*969일때 80*/
 }
-
-.portfolio>.content-box>.body>ul>li>.item-content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: calc(100% - 3.5vw);
-    height: 100%;
-}
-
-/* 포트폴리오 섹션 - 이미지 박스 */
-.portfolio>.content-box>.body>ul>li>.item-content>.item-img-box {
-    position: relative;
-    margin: 5px;
+.design .design-slide-arrows > div{
+    display: flex;
+    align-items: center;
+    width: calc(50% - 2.5px);
+    height: 35px;
     background-color: #ffffff;
-    overflow: hidden;
     cursor: pointer;
 }
-
-.portfolio>.content-box>.body>ul>li>.item-content>.item-img-box::before {
-    content: "";
+.design .design-slide-arrows > div:first-child{
+    margin-right:2.5px;
+    justify-content: flex-start;
+}
+.design .design-slide-arrows > div:last-child {
+    margin-left:2.5px;
+    justify-content: flex-end;
+}
+.design .design-slide-arrows > div > img {
     display: block;
-    padding-top: 100%;
-}
-
-.portfolio>.content-box>.body>ul>li>.item-content>.item-img-box::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(45, 41, 36, 0);
-    visibility: hidden;
-    transition: background 1s, visibility 1s;
-}
-
-.portfolio>.content-box>.body>ul>li>.item-content:hover>.item-img-box::after {
-    visibility: visible;
-    background-color: rgba(45, 41, 36, 0.5);
-}
-
-.portfolio>.content-box>.body>ul>li>.item-content>.item-img-box>span {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    opacity: 0;
-    color: #fff;
-    font-size: 2.2rem;
-    line-height: 2.2rem;
-    font-weight: 600;
-    visibility: hidden;
-    transform: translate(-50%, -50%);
-    transition: opacity 1s, visibility 1s;
-    z-index: 10;
-}
-
-.portfolio>.content-box>.body>ul>li>.item-content:hover>.item-img-box>span {
-    visibility: visible;
-    opacity: 1;
-}
-
-.portfolio>.content-box>.body>ul>li>.item-content>.item-img-box>img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    width: 10px;
+    margin: 0 12px;
 }
 
 
-.portfolio>.content-box>.body>ul>li>.item-content>div+div {
-    padding-left: 8.8%;
-    padding-top: 3.3%;
-}
 
-/* 포트폴리오 섹션 - 태그 아이콘 */
-.portfolio>.content-box>.body>ul>li>.item-content>.tag {
-    display: flex;
-    height: 5%;
-}
-.portfolio>.content-box>.body>ul>li>.item-content>.tag>.tag-icon img {
-    display: block;
-    height: 100%;
-}
-
-/* 포트폴리오 섹션 - 포트폴리오 */
-.portfolio>.content-box>.body>ul>li>.item-content>.txt span {
-    display: inline-block;
-    vertical-align: bottom;
-    letter-spacing: 1px;
-}
-
-.portfolio>.content-box>.body>ul>li>.item-content>.txt span:first-child {
-    font-size: calc(2rem + 0.15625vw);
-    line-height: calc(2rem + 0.15625vw);
-    font-weight: 900;
-    color: #ffffff;
-}
-
-.portfolio>.content-box>.body>ul>li>.item-content>.txt span:last-child {
-    font-weight: 700;
-    color: #ffffff;
-}
-
-
-/* design 섹션 */
-.design {
-    margin-top: 10.65vw;
-    padding-top: 10.4167vw;
-    margin-left: auto;
-    max-width: calc(((100vw - 1488px) / 2) + 1488px);
-}
-
-/* design 섹션 - 타이틀 */
-.design .title {
-    padding-right: 10vw;
-}
-
-.design .title>span::before {
-    content: "";
-    position: absolute;
-    bottom: -30px;
-    right: 18%;
-    width: 100vw;
-    height: 3px;
-    background-color: #FFB000;
-}
-
-/* design 섹션 - 슬라이드 */
+/* 디자인 섹션 - 슬라이드 */
 .design .slick-slider1 {
+    max-width: 1250px;
     flex: 1 0 0;
     overflow: hidden;
 }
@@ -1355,9 +1437,9 @@ section {
     position: relative;
 }
 
-/* design 섹션 - 슬라이드 이미지 박스*/
+/* 디자인 섹션 - 슬라이드 이미지 박스*/
 .design .slick-slider1 .slick-item .img {
-    width: 450px;
+    width: 460px;
     flex-shrink: 0;
     border-right: 10px solid #2D2924;
     background-size: cover;
@@ -1365,6 +1447,7 @@ section {
     background-repeat: no-repeat;
     box-sizing: border-box;
     transition: background 3s;
+    cursor: pointer;
 }
 
 .design .slick-slider1 .slick-item .img:hover {
@@ -1375,7 +1458,7 @@ section {
 .design .slick-slider1 .slick-item .img::before {
     content: "";
     display: block;
-    padding-bottom: 133.33333333333333%;
+    padding-bottom: 155.55555555555554%;
 }
 
 .design .slick-slider1 .slick-item:nth-child(1) .img {
@@ -1386,33 +1469,42 @@ section {
     background-image: url("./resource/site-coca-img.png");
 }
 
+
+
 /* design 섹션 - 슬라이드 텍스트 박스*/
-.design .slick-slider1 .slick-item .txt {
+.design .slick-slider1 .slick-item .item-content {
     position: relative;
-    padding-top: 4.946%;
     padding-left: 5.771%;
+    box-sizing: border-box;
     background-color: #ffffff;
 }
-
+.design .slick-slider1 .slick-item .txt {
+    padding-top: 3.611971104231166vh;
+    box-sizing: border-box;
+}
+/* 디자인 슬라이드 텍스트 박스 타이틀 */
 .design .slick-slider1 .slick-item .txt>.title {
     margin-bottom: 25px;
     font-weight: 900;
     letter-spacing: 1px;
 }
 
+/* 디자인 슬라이드 텍스트 박스 태그 바 */
 .design .slick-slider1 .slick-item .txt>.tag {
     margin-bottom: 30px;
+    height: 18px;
 }
 
 .design .slick-slider1 .slick-item .txt>.tag>.tag-icon {
-    margin-right: 10px;
+    height: 100%;
 }
 
 .design .slick-slider1 .slick-item .txt>.tag>.tag-icon>img {
     display: block;
-    height: 24px;
+    height: 100%;
 }
 
+/* 디자인 슬라이드 텍스트 박스 본문 */
 .design .slick-slider1 .slick-item .txt>.txt-body {
     width: 70%;
 }
@@ -1421,8 +1513,10 @@ section {
     font-size: calc(1.1rem + 0.15625vw);
     font-weight: 400;
     letter-spacing: 0.5px;
+    word-break: keep-all;
 }
 
+/* 디자인 슬라이드 텍스트 박스 참고 사이트 */
 .design .slick-slider1 .slick-item .txt>.source {
     position: absolute;
     bottom: 10%;
@@ -1435,20 +1529,131 @@ section {
 /* design 섹션 - 슬라이드 배경 이미지 */
 .design .slick-slider1 .slick-item .bg-img {
     position: absolute;
-    bottom: 5%;
+    bottom: 0;
     right: 0;
-    width: 144px;
-    background-image: url("https://nixpluvia.github.io/img1/pf/portfolio/puzzle_bg_2.svg");
-    background-repeat: no-repeat;
-    background-position: bottom right;
-    background-size: contain;
+    width: 119px;
 }
 
 .design .slick-slider1 .slick-item .bg-img::before {
     content: "";
     display: block;
-    padding-bottom: 166.66666666666667%;
+    padding-bottom: 134.7567544995198%;
 }
+.design .slick-slider1 .slick-item .bg-img > svg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* 디자인 팝업 */
+
+.popup-bg {
+    position: fixed;
+    display: none;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(0, 0, 0, 0.3);
+    z-index: 200;
+}
+
+.popup-bg.active {
+    display: block;
+    visibility: visible;
+}
+
+.popup-box {
+    position: fixed;
+    display: none;
+    visibility: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 200;
+}
+
+.popup-box.active {
+    display: block;
+    visibility: visible;
+}
+
+.popup-box .popup-button .left {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    transform: translate(-100%, -50%);
+}
+
+.popup-box .popup-button .right {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    transform: translate(100%, -50%);
+}
+
+.popup-box .btn-close {
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 40px;
+    height: 40px;
+}
+
+.popup-box .btn-close::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 7px;
+    transform: translateY(-50%) rotate(45deg);
+    transform-origin: center;
+    background-color: #ffffff;
+}
+
+.popup-box .btn-close::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 7px;
+    transform: translateY(-50%) rotate(-45deg);
+    transform-origin: center;
+    background-color: #ffffff;
+}
+
+.popup-box .popup-item {
+    display: none;
+    visibility: hidden;
+}
+
+.popup-box .popup-item.active {
+    display: block;
+    visibility: visible;
+}
+.popup-box .popup-item .img-ver img{
+    max-height: calc(100vh - 80px);
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1457,20 +1662,12 @@ section {
 
 /* contact 섹션 */
 .contact {
-    margin-top: 20.6398vh;
-    margin-bottom: 13vh;
-    padding-top: 20.6398vh;
+    height: 100vh;
+    padding-top: 20.63983488132095vh;
+    padding-bottom: 10.319917440660475vh;
 }
-
-/* contact 타이틀 라인 */
-.contact>h2>span::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -70px;
-    width: 30px;
-    height: 100%;
-    background-color: #FFB000;
+.contact >.title{
+    text-align: center;
 }
 
 /* contact 섹션 - 컨텐츠 박스 */
@@ -1534,6 +1731,10 @@ section {
     font-weight: 500;
     color: #ffffff;
     background-color: #2D2924;
+    cursor: pointer;
+}
+.contact .content .send-mail form>.btn-send>input:hover {
+    background-color: #FFB000;
 }
 
 
@@ -1592,10 +1793,13 @@ section {
     font-size: 1.4rem;
     line-height: 1.4rem;
     vertical-align: bottom;
+    color: #2D2924;
 }
 
 .contact .content .info-box .myself-info>ul>li>span:first-child {
-    width: 65px;
+    width: 90px;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
     font-weight: 700;
 }
 
@@ -1625,272 +1829,22 @@ section {
 .contact .content .sns-bar>ul>li>a>svg {
     height: 100%;
 }
-
+.contact .content .sns-bar>ul>li:hover .sns-icon-path {
+    fill: #FFB000;
+}
 
 
 footer {
     position: relative;
 }
 
-footer>h2 {
-    position: absolute;
-    top: -13vh;
-    right: 0;
-    font-size: 1.4rem;
-    line-height: 1.4rem;
-    font-weight: 300;
-    color: #2D2924;
-}
 
 
 
+/* 반응형 */
 
-/* 포트폴리오 팝업 */
-.portfolio-popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    visibility: hidden;
-    background-color: rgba(45, 41, 36, 0.3);
-    z-index: 200;
-}
-
-.portfolio-popup.active {
-    display: block;
-    visibility: visible;
-}
-
-.popup-box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 60%;
-    min-width: 700px;
-    transform: translate(-50%, -50%);
-    background-color: #ffffff;
-}
-
-.popup-box>.popup-img {
-    min-width: 300px;
-    max-width: 450px;
-    flex: 1.5 0 0;
-}
-
-.popup-box>.popup-img>a {
-    display: block;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    transition: background-position 3s;
-}
-
-.popup-box>.popup-img>a:hover {
-    background-position: 0 100%;
-}
-
-.popup-box>.popup-img>a::before {
-    content: "";
-    display: block;
-    padding-bottom: 177.77777777777777%;
-}
-
-.popup-box>.txt-box {
-    flex: 2 0 0;
-    padding-top: 5%;
-    padding-left: 5%;
-    box-sizing: border-box;
-}
-
-.popup-box>.txt-box>ul,
-.popup-box>.txt-box>ul>li {
-    width: 100%;
-    height: 100%;
-}
-
-.popup-box>.txt-box>ul>li {
-    position: relative;
-    display: none;
-}
-
-.popup-box>.txt-box>ul>li.active {
-    display: block;
-}
-
-.popup-box>.txt-box>ul>li::after {
-    content: "본 사이트는 상업적 목적이 아닌 개인 포트폴리오 사이트로 제작되었습니다.";
-    position: absolute;
-    right: 5%;
-    bottom: 5%;
-    font-size: 1.2rem;
-    line-height: 1.2rem;
-    color: #A0A0A0;
-}
-
-.popup-box>.txt-box>ul>li>.title>span:first-child {
-    font-size: 3.2rem;
-    line-height: 3.2rem;
-    font-weight: 900;
-    color: #2D2924;
-}
-
-.popup-box>.txt-box>ul>li>.title>span:last-child {
-    font-size: 1.4rem;
-    line-height: 1.4rem;
-    font-weight: 700;
-    color: #2D2924;
-}
-
-.popup-box>.txt-box>ul>li>.tag {
-    margin-top: 10px;
-}
-
-.popup-box>.txt-box>ul>li>.tag>.tag-icon>img {
-    display: block;
-    height: 24px;
-}
-
-.popup-box>.txt-box>ul>li>.txt-body {
-    margin-top: 1.5625vw;
-}
-
-.popup-box>.txt-box>ul>li>.txt-body>p {
-    font-size: 1.6rem;
-    font-weight: 500;
-    color: #2D2924;
-}
-
-.popup-box>.txt-box>ul>li>.source {
-    margin-top: 5.2083vw;
-}
-
-.popup-box>.txt-box>ul>li>.source>div>span {
-    font-size: 1.4rem;
-    line-height: 1.4rem;
-    color: #2D2924;
-}
-
-
-
-
-/* Resoponsive Web*/
-
-/* Desktop device */
-@media (max-width: 1700px) {
-    /* 전체 페이지 여백 */
-    .con {
-        padding-left: 5.8vw;
-        padding-right: 5.8vw;
-    }
-    .design {
-        padding-left: 5.8vw;
-    }
-}
-
-
-
-@media (max-width: 1440px) {
-    /* 소개 페이지 여백 */
-    .about>.content-box>.content {
-        padding-left: 3vw;
-    }
-
-
-    /* 포트폴리오 아이템 갯수 */
-    .portfolio>.content-box>.body>ul>li {
-        width: calc(100% / 2);
-    }
-
-
-    /* 디자인 페이지 */
-    .design {
-        flex-wrap: wrap;
-    }
-    .design .title {
-        width: 100%;
-        padding-right: 0;
-        margin-bottom: 7vw;
-    }
-    .design .slick-slider1 {
-        width: 100%;
-        flex: 0 0 auto;
-    }
-
-    .about .body>.profile-tab>h3 {
-        font-size: calc(1.4rem + 0.625vw);
-        line-height: calc(1.4rem + 0.625vw);
-    }
-    /* 소개 페이지 스킬 탭 */
-    .about .body>.skill-tab>.skills-box {
-        width: 90%;
-    }
-    
-}
-
-
-@media (min-width: 769px) and (max-width: 1440px) {
-    /* 전체 페이지 여백 */
-    .con {
-        padding-left: calc( 72px + 5.8vw );
-    }
-    .design {
-        padding-left: calc( 72px + 5.8vw );
-    }
-}
-
-
-
-
-
-
-@media (max-width: 1024px) {
-    .intro .title {
-        margin-bottom: 42vh;
-    }
-    .intro>.intro-img {
-        margin-bottom: 40vh;
-    }
-
-    /* 소개 페이지 */
-    .about>.content-box {
-        flex-wrap: wrap;
-    }
-    /* 소개 페이지 사진 */
-    .about>.content-box>.photo {
-        width: 300px;
-    }
-    /* 소개 페이지 탭박스 */
-    .about>.content-box>.content {
-        width: 100%;
-        padding-left: 0;
-    }
-    .about>.content-box>.content>.head{
-        justify-content: center;
-    }
-    .about>.content-box>.content>.body>.profile-tab>h3{
-        text-align: center;
-    }
-    .about>.content-box>.content>.body>.profile-tab>ul,
-    .about>.content-box>.content>.body>.skill-tab{
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 400px;
-    }
-    .about .body>.skill-tab>.skills-box {
-        width: 100%;
-    }
-    
-
-    /* 포트폴리오 페이지 */
-    .portfolio>.content-box>.body>ul>li>.item-content>.txt span:first-child {
-        font-size: calc(1.4rem + 0.15625vw);
-        line-height: calc(1.4rem + 0.15625vw);
-    }
-
-
-    .design .slick-slider1 .slick-item>.img {
-        width: 375px;
+@media (max-width:1600px) {
+    .con,.design>.wrap {
+        padding-left: 100px;
     }
 }
