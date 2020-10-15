@@ -105,12 +105,12 @@
         </div>
         <ul class="popup-items">
             <li class="popup-item item1">
-                <div class="popup-img img-ver">
+                <div class="popup-img img-ver popup-prevent">
                     <img src="./resource/design-kyobo.png" alt="교보문고 리디자인">
                 </div>
             </li>
             <li class="popup-item  item2">
-                <div class="popup-img img-ver">
+                <div class="popup-img img-ver popup-prevent">
                     <img src="./resource/site-coca-img.png" alt="코카콜라 리디자인">
                 </div>
             </li>
@@ -118,7 +118,7 @@
     </div>
 
     <!-- 본문 섹션 -->
-    <div class="wrap">
+    <div id="wrap">
         <!-- 인트로 페이지 -->
         <header class="intro puzzle-bg-v1 section-page actived-on-visible" data-page-index="0">
             <div class="con flex">
@@ -448,7 +448,17 @@
                     <div class="pf-content">
                         <ul class="pf-items">
                             <li class="pf-item active">
-                                <h3 class="pf-item-title">COCACOLA</h3>
+                                <div class="pf-item-title-bar flex">
+                                    <h3 class="pf-item-title">COCACOLA</h3>
+                                    <div class="device-icon flex-ai-c">
+                                        <div class="icon-computer">
+                                            <img src="./resource/icon-desktop.svg" alt="">
+                                        </div>
+                                        <!-- <div class="icon-mobile">
+                                            <img src="./resource/icon-mobile.svg" alt="">
+                                        </div> -->
+                                    </div>
+                                </div>
                                 <div class="pf-item-bar flex">
                                     <div class="tag">
                                         <img src="./resource/icon-redesign.svg" alt="">
@@ -469,10 +479,17 @@
                                 </div>
                             </li>
                             <li class="pf-item">
-                                <h3 class="pf-item-title">ARTFIVE</h3>
+                                <div class="pf-item-title-bar flex">
+                                    <h3 class="pf-item-title">ARTFIVE</h3>
+                                    <div class="device-icon flex-ai-c">
+                                        <div class="icon-computer">
+                                            <img src="./resource/icon-desktop.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="pf-item-bar flex">
                                     <div class="tag">
-                                        <img src="./resource/icon-redesign.svg" alt="">
+                                        <img src="./resource/icon-copy.svg" alt="">
                                     </div>
                                     <ul class="color-list flex-ai-c">
                                         <li class="item-color" style="background-color: #000000;"></li>
@@ -488,10 +505,17 @@
                                 </div>
                             </li>
                             <li class="pf-item">
-                                <h3 class="pf-item-title">DESIGNPIXEL</h3>
+                                <div class="pf-item-title-bar flex">
+                                    <h3 class="pf-item-title">DESIGNPIXEL</h3>
+                                    <div class="device-icon flex-ai-c">
+                                        <div class="icon-computer">
+                                            <img src="./resource/icon-desktop.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="pf-item-bar flex">
                                     <div class="tag">
-                                        <img src="./resource/icon-redesign.svg" alt="">
+                                        <img src="./resource/icon-copy.svg" alt="">
                                     </div>
                                     <ul class="color-list flex-ai-c">
                                         <li class="item-color" style="background-color: #000000;"></li>
@@ -507,10 +531,17 @@
                                 </div>
                             </li>
                             <li class="pf-item">
-                                <h3 class="pf-item-title">HEIMISH</h3>
+                                <div class="pf-item-title-bar flex">
+                                    <h3 class="pf-item-title">HEIMISH</h3>
+                                    <div class="device-icon flex-ai-c">
+                                        <div class="icon-computer">
+                                            <img src="./resource/icon-desktop.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="pf-item-bar flex">
                                     <div class="tag">
-                                        <img src="./resource/icon-redesign.svg" alt="">
+                                        <img src="./resource/icon-copy.svg" alt="">
                                     </div>
                                     <ul class="color-list flex-ai-c">
                                         <li class="item-color" style="background-color: #000000;"></li>
@@ -527,10 +558,17 @@
                                 </div>
                             </li>
                             <li class="pf-item">
-                                <h3 class="pf-item-title">CLEADERM</h3>
+                                <div class="pf-item-title-bar flex">
+                                    <h3 class="pf-item-title">CLEADERM</h3>
+                                    <div class="device-icon flex-ai-c">
+                                        <div class="icon-computer">
+                                            <img src="./resource/icon-desktop.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="pf-item-bar flex">
                                     <div class="tag">
-                                        <img src="./resource/icon-redesign.svg" alt="">
+                                        <img src="./resource/icon-copy.svg" alt="">
                                     </div>
                                     <ul class="color-list flex-ai-c">
                                         <li class="item-color" style="background-color: #000000;"></li>
@@ -580,57 +618,57 @@
                 <div class="portfolio-img-box">
                     <ul class="pf-img-list">
                         <li class="pf-img active" style="background-image:url(./resource/site-coca-img.png)">
-                            <a href="#"></a>
+                            <a href="/pf/cocacola/index.php" target="_blank"></a>
                             <div class="btn-box flex">
                                 <button class="btn-origin">
-                                    <a class="font-noto" href="#">ORIGINAL</a>
+                                    <a class="font-noto" href="https://www.coca-colacompany.com/" target="_blank">ORIGINAL</a>
                                 </button>
                                 <button class="btn-demo">
-                                    <a class="font-noto" href="#">DEMO</a>
+                                    <a class="font-noto" href="/pf/cocacola/index.php" target="_blank">DEMO</a>
                                 </button>
                             </div>
                         </li>
                         <li class="pf-img" style="background-image:url(./resource/site-artfive-img.png)">
-                            <a href="#"></a>
+                            <a href="/pf/artfive/index.php" target="_blank"></a>
                             <div class="btn-box flex">
                                 <button class="btn-origin">
-                                    <a class="font-noto" href="#">ORIGINAL</a>
+                                    <a class="font-noto" href="http://www.artfive.co.kr/" target="_blank">ORIGINAL</a>
                                 </button>
                                 <button class="btn-demo">
-                                    <a class="font-noto" href="#">DEMO</a>
+                                    <a class="font-noto" href="/pf/artfive/index.php" target="_blank">DEMO</a>
                                 </button>
                             </div>
                         </li>
                         <li class="pf-img" style="background-image:url(./resource/site-designpixel-img.png)">
-                            <a href="#"></a>
+                            <a href="/pf/designpixel/index.php" target="_blank"></a>
                             <div class="btn-box flex">
                                 <button class="btn-origin">
-                                    <a class="font-noto" href="#">ORIGINAL</a>
+                                    <a class="font-noto" href="https://designpixel.co.kr/" target="_blank">ORIGINAL</a>
                                 </button>
                                 <button class="btn-demo">
-                                    <a class="font-noto" href="#">DEMO</a>
+                                    <a class="font-noto" href="/pf/designpixel/index.php" target="_blank">DEMO</a>
                                 </button>
                             </div>
                         </li>
                         <li class="pf-img" style="background-image:url(./resource/site-heimish-img.png)">
-                            <a href="#"></a>
+                            <a href="/pf/heimish/index.php" target="_blank"></a>
                             <div class="btn-box flex">
                                 <button class="btn-origin">
-                                    <a class="font-noto" href="#">ORIGINAL</a>
+                                    <a class="font-noto" href="http://www.eheimish.com/" target="_blank">ORIGINAL</a>
                                 </button>
                                 <button class="btn-demo">
-                                    <a class="font-noto" href="#">DEMO</a>
+                                    <a class="font-noto" href="/pf/heimish/index.php" target="_blank">DEMO</a>
                                 </button>
                             </div>
                         </li>
                         <li class="pf-img" style="background-image:url(./resource/site-cleaderm-img.png)">
-                            <a href="#"></a>
+                            <a href="/pf/cleaderm/index.php" target="_blank"></a>
                             <div class="btn-box flex">
                                 <button class="btn-origin">
-                                    <a class="font-noto" href="#">ORIGINAL</a>
+                                    <a class="font-noto" href="https://cleaderm.co.kr/" target="_blank">ORIGINAL</a>
                                 </button>
                                 <button class="btn-demo">
-                                    <a class="font-noto" href="#">DEMO</a>
+                                    <a class="font-noto" href="/pf/cleaderm/index.php" target="_blank">DEMO</a>
                                 </button>
                             </div>
                         </li>
@@ -642,7 +680,7 @@
         </section>
 
         <!-- 디자인 포트폴리오 -->
-        <section class="design section-page actived-on-visible" data-page-index="3">
+        <section class="design section-page actived-on-visible puzzle-bg-v3" data-page-index="3">
             <div class="wrap flex">
                 <div class="content-info">
                     <h2 class="title font-Fredericka fs-title2">
@@ -741,7 +779,7 @@
         </section>
 
         <!-- 문의 페이지 -->
-        <section class="contact section-page con actived-on-visible" data-page-index="4">
+        <section class="contact section-page con actived-on-visible puzzle-bg-v2" data-page-index="4">
             <h2 class="title font-Fredericka fs-title2">
                 <div class="inline-block relative">
                     <span class="txt-front inline-block">Contact</span>
@@ -823,7 +861,7 @@
                                         </g>
                                     </svg>
                                 </div>
-                                <h2 class="font-Gyeonggi">작지만 빠져서는 안되는 퍼즐 한 조각 처럼</h2>
+                                <h2 class="font-Gyeonggi">작아도 없으면 안 되는 퍼즐 한 조각 같이</h2>
                                 <div class="flex-jc-end font-Fredericka">
                                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -884,7 +922,7 @@
                             <ul>
                                 <li class="info-blog">
                                     <span class="font-noto">Site</span>
-                                    <span class="font-noto"><a href="https://nix.blog.oa.ogg">blog.nixpluvia.com</a></span>
+                                    <span class="font-noto"><a href="https://blog.nixpluvia.com">blog.nixpluvia.com</a></span>
                                 </li>
                                 <li class="info-email">
                                     <span class="font-noto">E-Mail</span>

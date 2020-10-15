@@ -690,6 +690,9 @@ section {
     left: 0;
     width: 36.40625vw;
     height: 46.40625vw;
+    background-image: url(./resource/bg-puzzle.png);
+    background-size: contain;
+    background-repeat: no-repeat;
     transform: scaleX(-1);
 }
 
@@ -1146,13 +1149,24 @@ section {
 }
 
 /* 포트폴리오 컨텐츠 아이템 타이틀 */
+.portfolio .pf-content .pf-item-title-bar {
+
+    padding-bottom: 3.611971104231166vh;
+}
 .portfolio .pf-content .pf-item-title{
     font-size:3.6rem;
     line-height: 3.6rem;
     font-weight: 500;
     letter-spacing: 1px;
-    padding-bottom: 3.611971104231166vh;
 }
+.portfolio .pf-content .pf-item-title-bar .device-icon {
+    margin-left: 25px;
+}
+.portfolio .pf-content .pf-item-title-bar .device-icon img{
+    display: block;
+    height: 20px;
+}
+
 
 /* 포트폴리오 컨텐츠 아이템 정보 바 */
 .portfolio .pf-content .pf-item-bar {
@@ -1372,22 +1386,20 @@ section {
 
 
 
-
-
-
-
-
 /* 디자인 섹션 */
 .design {
+    position: relative;
     height: 100vh;
     background-color: #2D2924;
 }
 .design .wrap {
+    position: relative;
     width: 100%;
     margin-left: auto;
     padding-top: 13.828689370485035vh;
     max-width: calc(((100vw - 1500px) / 2) + 1500px);
     box-sizing: border-box;
+    z-index: 1;
 }
 
 .design .content-info {
@@ -1526,7 +1538,7 @@ section {
     font-weight: 500;
 }
 
-/* design 섹션 - 슬라이드 배경 이미지 */
+/* 디자인 - 슬라이드 배경 이미지 */
 .design .slick-slider1 .slick-item .bg-img {
     position: absolute;
     bottom: 0;
@@ -1582,24 +1594,62 @@ section {
     visibility: visible;
 }
 
+/* 팝업 박스 버튼 */
 .popup-box .popup-button .left {
     position: absolute;
     top: 50%;
-    left: 0;
-    width: 50px;
-    height: 50px;
+    left: -20px;
     transform: translate(-100%, -50%);
 }
 
 .popup-box .popup-button .right {
     position: absolute;
     top: 50%;
-    right: 0;
-    width: 50px;
-    height: 50px;
+    right: -20px;
     transform: translate(100%, -50%);
 }
 
+/* 팝업 박스 버튼 화살표 */
+.popup-box .popup-button .left::before, .popup-box .popup-button .left::after,
+.popup-box .popup-button .right::before, .popup-box .popup-button .right::after{
+    content:"";
+    display: block;
+    width: 25px;
+    height: 5px;
+    background-color: #ffffff;
+}
+.popup-box .popup-button .left::before{
+    transform: rotate(45deg);
+    transform-origin: left bottom;
+}
+.popup-box .popup-button .left::after{
+    transform: rotate(-45deg);
+    transform-origin: left top;
+}
+.popup-box .popup-button .right::before{
+    transform: rotate(-45deg);
+    transform-origin: right bottom;
+}
+.popup-box .popup-button .right::after{
+    transform: rotate(45deg);
+    transform-origin: right top;
+}
+
+
+.popup-box .popup-button .left:hover::before,
+.popup-box .popup-button .left:hover::after {
+    background-color: #FFB000;
+}
+.popup-box .popup-button .right:hover::before,
+.popup-box .popup-button .right:hover::after {
+    background-color: #FFB000;
+}
+
+
+
+
+
+/* 팝업 닫기 버튼 */
 .popup-box .btn-close {
     position: absolute;
     top: -40px;
@@ -1631,7 +1681,11 @@ section {
     transform-origin: center;
     background-color: #ffffff;
 }
+.popup-box .btn-close:hover::after, .popup-box .btn-close:hover::before {
+    background-color: #FFB000;
+} 
 
+/* 팝업 아이템 */
 .popup-box .popup-item {
     display: none;
     visibility: hidden;
@@ -1641,18 +1695,25 @@ section {
     display: block;
     visibility: visible;
 }
-.popup-box .popup-item .img-ver img{
-    max-height: calc(100vh - 80px);
+
+/* 팝업 아이템 이미지 */
+.popup-box .popup-item .img-ver {
+    height: 80vh;
+    overflow-y: scroll;
 }
-
-
-
-
-
-
-
-
-
+.popup-box .popup-item .img-ver::-webkit-scrollbar {
+    width: 17px;
+}
+.popup-box .popup-item .img-ver::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+.popup-box .popup-item .img-ver::-webkit-scrollbar-thumb {
+    background: #FFB000;
+}
+.popup-box .popup-item .img-ver img{
+    display: block;
+    margin: 0 auto;
+}
 
 
 
@@ -1665,6 +1726,9 @@ section {
     height: 100vh;
     padding-top: 20.63983488132095vh;
     padding-bottom: 10.319917440660475vh;
+}
+.contact::after {
+    z-index: -1;
 }
 .contact >.title{
     text-align: center;
@@ -1847,4 +1911,8 @@ footer {
     .con,.design>.wrap {
         padding-left: 100px;
     }
+}
+
+@media (max-width: 1300px) {
+    
 }

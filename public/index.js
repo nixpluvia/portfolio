@@ -123,42 +123,6 @@ function progressAni__init() {
 
 
 
-// 인트로 페이지 함수 시작
-// function introAni__init() {
-
-//     var aboutPage = $('.about').offset().top + 200;
-
-//     $('html').data('data-intro', false);
-
-//     if( $(window).outerWidth() > 768){
-//         // 스크롤 방지
-//         $('html').data('data-intro', true);
-
-//         preventScroll();    
-
-//         // 스크롤 방지 해제
-//         setTimeout(function () {
-//             $('html').data('data-intro', false);
-//             $('html,body').animate({
-//                 scrollTop: aboutPage + 'px'
-//             }, 1000);
-//         }, 5000);
-//     }
-// }
-
-// 스크롤 방지 함수
-// function preventScroll(){
-//     $('.wrap, .top-bar, .side-bar, .pagenation').on("mousewheel DOMMouseScroll", function (e) {
-//         if ($('html').data('data-intro') == true) {
-//             e.preventDefault();
-//         }
-//         return;
-//     })
-// }
-// 인트로 페이지 함수 끝
-
-
-
 // 발견 하는 함수 시작
 
 // 발견 요소의 offset 설정
@@ -268,24 +232,10 @@ function ActiveOnVisible__init() {
 
 // 발견 하는 함수 끝
 
-
-// 리사이즈
-function windowResize__init() {
-    $(window).resize(function () {
-        var windowSize = $(window).outerWidth();
-        if (windowSize < 1500) {
-            lineSize__init();
-        }
-    });
-}
-
-
-
-
 function pagenation(){
     var $this = $(this);
     var dotIndex = $this.index();
-    var $section = $('.wrap > .section-page').eq(dotIndex);
+    var $section = $('#wrap > .section-page').eq(dotIndex);
     var sectionOffset = parseInt($section.attr("data-active-on-visible-offsetTop"));
 
     // console.log($this.index());
@@ -336,16 +286,16 @@ function slickSlide_init() {
         swipeToSlide: true
     })
     
-    $('.btn-all').on('click', function(){
+    $('.btn-all').on('click', function () {
         $('.pf-slide').slick('slickUnfilter');
-      });
-      $('.btn-redesign').on('click', function(){
+    });
+    $('.btn-redesign').on('click', function () {
         $('.pf-slide').slick('slickUnfilter');
-        $('.pf-slide').slick('slickFilter','[data-item-tab=1]');
-      });
-      $('.btn-copy').on('click', function(){
+        $('.pf-slide').slick('slickFilter', '[data-item-tab=1]');
+    });
+    $('.btn-copy').on('click', function () {
         $('.pf-slide').slick('slickUnfilter');
-        $('.pf-slide').slick('slickFilter','[data-item-tab=2]');
+        $('.pf-slide').slick('slickFilter', '[data-item-tab=2]');
     });
 }
 // slick 슬라이드 끝
@@ -406,7 +356,7 @@ function popupOpen() {
     var $popupBg = $('.popup-bg');
     var $popupItem = $popupBox.find('.popup-items > .popup-item');
 
-    console.log(itemIndex);
+    $('html').data('data-Wheel-prevent', true);
 
     $popupBg.addClass('active');
     $popupBox.addClass('active');
@@ -417,6 +367,8 @@ function popupClose() {
     var $popupBox = $('.popup-box');
     var $popupBg = $('.popup-bg');
     var $popupItem = $popupBox.find('.popup-items > .popup-item');
+
+    $('html').data('data-Wheel-prevent', false);
 
     $popupBox.removeClass('active');
     $popupBg.removeClass('active');
@@ -461,13 +413,42 @@ function click__init(){
     $('.popup-button > button').click(popupArrow);
 }
 
+function scroll_init(){
+    // 스크롤 이벤트 버블링 방지
+    $('#wrap, .side-bar, .side-shadow, .popup-bg, .popup-box .btn-close, .popup-box .popup-button').on('mousewheel DOMMouseScroll',function(e){
+        if ( $('html').data('data-Wheel-prevent') == true ) {
+            e.stopPropagation();
+            e.preventDefault();
+            return ;
+        }
+    })
+    // 팝업 이미지 스크롤 방지 이벤트
+    $('.popup-prevent').on('mousewheel DOMMouseScroll',function(e){
+        var $this = $(this);
+        var thisHeight = $this.outerHeight();
+        var boxScrollTop = $this.scrollTop();
+        var boxScrollHeight = boxScrollTop + thisHeight;
+        var imgHeight = $this.children().outerHeight();
+        var delta = e.originalEvent.deltaY;
 
+        // 스크롤의 최상단 일 경우
+        if ( boxScrollTop == 0 ) {
+            if ( delta < 0 ){
+                e.stopPropagation();
+                e.preventDefault();
+                return ;
+            }
+        }
 
-// 지연 시작 모음
-function setTime__init(){
-    setTimeout(function(){
-        $('.icon-scroll').addClass('active');
-    }, 4000);
+        // 스크롤의 최하단 일 경우
+        if ( boxScrollHeight >= imgHeight ) {
+            if ( delta > 0 ){
+                e.stopPropagation();
+                e.preventDefault();
+                return ;
+            }
+        }
+    })
 }
 
 
@@ -480,7 +461,6 @@ $(function () {
 
     // 슬라이드
     slickSlide_init();
-    windowResize__init();
 
     portfolioClick__init();
 
@@ -494,8 +474,8 @@ $(function () {
     click__init();
 
     pagenation__init();
-    
-    setTime__init();
+
+    scroll_init();
 });
 
 // // 시작 위치 초기화
