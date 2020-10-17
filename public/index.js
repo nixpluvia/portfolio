@@ -236,7 +236,7 @@ function pagenation(){
     var $this = $(this);
     var dotIndex = $this.index();
     var $section = $('#wrap > .section-page').eq(dotIndex);
-    var sectionOffset = parseInt($section.attr("data-active-on-visible-offsetTop"));
+    var sectionOffset = parseFloat($section.attr("data-active-on-visible-offsetTop"));
 
     // console.log($this.index());
     // var diffy = 1;
@@ -247,7 +247,6 @@ function pagenation(){
     $('html,body').stop().animate({
         scrollTop : sectionOffset + 'px'
     }, 1000);
-
 }
 
 // pagenation 함수 시작
@@ -275,71 +274,171 @@ function slickSlide_init() {
         nextArrow : '<div class="next"><img src="./resource/arrow-right.svg"></div>'
     });
 
-    $('.pf-slide').slick({
-        infinite: false,
-        dots:false,
-        arrows: false,
-        rtl: true,
-        swipe: true,
-        slidesToShow: 3,
-        variableWidth: true,
-        swipeToSlide: true
-    })
+    // $('.pf-slide').slick({
+    //     infinite: false,
+    //     dots:false,
+    //     arrows: false,
+    //     rtl: true,
+    //     slidesToShow: 3,
+    //     variableWidth: true,
+    //     swipe: true,
+    //     swipeToSlide: true,
+    //     responsive: [
+    //         {
+    //             breakpoint: 1024,
+    //             settings: {
+    //             slidesToShow: 2
+    //             }
+    //         },
+    //         {
+    //             breakpoint: 900,
+    //             settings: {
+    //                 slidesToShow: 1
+    //             }
+    //         }
+    //     ]
+    // })
     
-    $('.btn-all').on('click', function () {
-        $('.pf-slide').slick('slickUnfilter');
-    });
-    $('.btn-redesign').on('click', function () {
-        $('.pf-slide').slick('slickUnfilter');
-        $('.pf-slide').slick('slickFilter', '[data-item-tab=1]');
-    });
-    $('.btn-copy').on('click', function () {
-        $('.pf-slide').slick('slickUnfilter');
-        $('.pf-slide').slick('slickFilter', '[data-item-tab=2]');
-    });
+    // $('.btn-all').on('click', function () {
+    //     $('.pf-slide').slick('slickUnfilter');
+    // });
+    // $('.btn-redesign').on('click', function () {
+    //     $('.pf-slide').slick('slickUnfilter');
+    //     $('.pf-slide').slick('slickFilter', '[data-item-tab=1]');
+    // });
+    // $('.btn-copy').on('click', function () {
+    //     $('.pf-slide').slick('slickUnfilter');
+    //     $('.pf-slide').slick('slickFilter', '[data-item-tab=2]');
+    // });
 }
 // slick 슬라이드 끝
 
-// 포트폴리오 클릭 함수 시작
-function portfolioSlideClick(){
-    var $this = $(this);
-    var $itemList = $this.parent().find(' > .item');
-    var itemIndex = $this.attr('data-slick-index');
-    var $pfImg = $('.portfolio .pf-img-list > li');
-    var $pfContent = $('.portfolio .pf-items > li');
 
-    $itemList.removeClass('active');
-    $pfImg.removeClass('active');
-    $pfContent.removeClass('active');
+function prevSlider__init() {
+    // 미리보기 슬릭 슬라이더
+    $(".preview-slider").slick({
+        rtl: true,
+        dots: false,
+        arrows: false,
+        infinite: false,
+        slidesToShow: 3,
+        slidesToScroll: 2,
+        variableWidth: true,
+        // 반응형
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 900,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    });
+    // 슬라이드 아이템 클릭 이벤트
+    $(".preview-slider .item").click(function () {
+        var $this = $(this);
+        var $sliderItems = $this.parent().find("> .item");
+        var itemIndex = $this.index();
 
-    $this.addClass('active');
-    $pfImg.eq(itemIndex).addClass('active');
-    $pfContent.eq(itemIndex).addClass('active');
-}
+        var $contentBox = $(".ps-content-box");
+        var $contents = $contentBox.find(" > ul > li");
+        var $actContent = $contents.eq(itemIndex);
 
-// 포트폴리오 탭 클릭
-function portfolioTabClick(){
-    var $this = $(this);
-    var thisWidth = $this.outerWidth();
-    var leftPosition = $this.position().left;
-    var ParentWidth = $this.closest('.pf-tab-bar').outerWidth();
-    var rightPostion = ParentWidth - leftPosition - thisWidth - 65;
-    var $btnBg = $('.portfolio .btn-bg-bar');
+        var $imgBox = $(".ps-img-box");
+        var $imgs = $imgBox.find(" > ul > li");
+        var $actImg = $imgs.eq(itemIndex);
 
-    $this.parent().find('> .pf-tab-btn').removeClass('active');
-    $this.addClass('active');
-    $btnBg.css('width', thisWidth + 30 +'px');
-    $btnBg.css('right', rightPostion + 'px');
-}
+        $sliderItems.removeClass("active");
+        $contents.removeClass("active");
+        $imgs.removeClass("active");
+
+        $this.addClass("active");
+        $actContent.addClass("active");
+        $actImg.addClass("active");
+    });
+
+    // 슬라이드 탭 버튼
+    $(".slider-tab-head .tab-head").click(function () {
+        var $this = $(this);
+
+        var thisWidth = $this.outerWidth();
+        var leftPosition = $this.position().left;
+        var ParentWidth = $this.closest('.pf-tab-bar').outerWidth();
+        var rightPostion = ParentWidth - leftPosition - thisWidth - 65;
+        var $btnBg = $('.portfolio .btn-bg-bar');
+        
+
+
+        var btnIndex = $this.attr('data-tab-head');
+        var $btnTabs = $this.parent().find(' > button');
+
+
+        $btnTabs.removeClass('active');
+        $this.addClass('active');
+        $btnBg.css('width', thisWidth + 30 +'px');
+        $btnBg.css('right', rightPostion + 'px');
+
+
+        if (btnIndex < 1) {
+            $('.preview-slider').slick('slickUnfilter');
+        } else {
+            $('.preview-slider').slick('slickUnfilter');
+            $('.preview-slider').slick("slickFilter", "[data-slide-tab=" + btnIndex + "]");
+        }
+    });
 
 
 
-function portfolioClick__init(){
-    $('.pf-slide .item').click(portfolioSlideClick);
-
-    $('.portfolio .pf-tab-btn').click(portfolioTabClick);
     $('.portfolio .btn-all').click();
 }
+// // 포트폴리오 클릭 함수 시작
+// function portfolioSlideClick(){
+//     var $this = $(this);
+//     var $itemList = $this.parent().find(' > .item');
+//     var itemIndex = $this.attr('data-slick-index');
+//     var $pfImg = $('.portfolio .pf-img-list > li');
+//     var $pfContent = $('.portfolio .pf-items > li');
+
+//     $itemList.removeClass('active');
+//     $pfImg.removeClass('active');
+//     $pfContent.removeClass('active');
+
+//     $this.addClass('active');
+//     $pfImg.eq(itemIndex).addClass('active');
+//     $pfContent.eq(itemIndex).addClass('active');
+// }
+
+// // 포트폴리오 탭 클릭
+// function portfolioTabClick(){
+//     var $this = $(this);
+//     var thisWidth = $this.outerWidth();
+//     var leftPosition = $this.position().left;
+//     var ParentWidth = $this.closest('.pf-tab-bar').outerWidth();
+//     var rightPostion = ParentWidth - leftPosition - thisWidth - 65;
+//     var $btnBg = $('.portfolio .btn-bg-bar');
+
+//     $this.parent().find('> .pf-tab-btn').removeClass('active');
+//     $this.addClass('active');
+//     $btnBg.css('width', thisWidth + 30 +'px');
+//     $btnBg.css('right', rightPostion + 'px');
+// }
+
+
+
+// function portfolioClick__init(){
+//     $('.pf-slide .item').click(portfolioSlideClick);
+
+//     $('.portfolio .pf-tab-btn').click(portfolioTabClick);
+//     $('.portfolio .btn-all').click();
+// }
 
 
 
@@ -462,7 +561,7 @@ $(function () {
     // 슬라이드
     slickSlide_init();
 
-    portfolioClick__init();
+    // portfolioClick__init();
 
     // 인트로 페이지 함수
     // introAni__init();
@@ -476,6 +575,8 @@ $(function () {
     pagenation__init();
 
     scroll_init();
+
+    prevSlider__init();
 });
 
 // // 시작 위치 초기화

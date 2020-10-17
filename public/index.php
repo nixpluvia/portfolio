@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -182,7 +182,14 @@
                     </svg>
                 </div>
             </div>
-
+            <div class="icon-scroll">
+                <svg version="1.1" id="layer" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30 54" xml:space="preserve">
+                    <polygon class="icon-scroll-path" points="27,36 15,48 3,36 0,39 15,54 30,39 " />
+                    <polygon class="icon-scroll-path" points="27,18 15,30 3,18 0,21 15,36 30,21 " />
+                    <polygon class="icon-scroll-path" points="27,0 15,12 3,0 0,3 15,18 30,3 " />
+                </svg>
+            </div>
         </header>
 
         <!-- 소개 페이지 -->
@@ -264,7 +271,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="profile2 profile flex actived-on-visible" data-active-on-visible-diff-y="600">
+                        <div class="profile2 profile flex actived-on-visible" data-active-on-visible-diff-y="800">
                             <div class="profile-box1">
                                 <div class="tag-title-bar">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 158.75 33.31">
@@ -445,7 +452,7 @@
                         </div>
                     </h2>
                     <!-- 포트폴리오 아이템 텍스트 박스 -->
-                    <div class="pf-content">
+                    <div class="pf-content ps-content-box">
                         <ul class="pf-items">
                             <li class="pf-item active">
                                 <div class="pf-item-title-bar flex">
@@ -588,7 +595,7 @@
                     </div>
                     <!-- 포트폴리오 슬라이드 박스 -->
                     <div class="pf-slide-box">
-                        <div class="pf-tab-bar flex-jc-end flex-ai-c font-noto">
+                        <div class="pf-tab-bar slider-tab-head flex-jc-end flex-ai-c font-noto">
                             <div class="btn-bg-bar">
                                 <div class="left">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.41 39.51">
@@ -601,21 +608,21 @@
                                     </svg>
                                 </div>
                             </div>
-                            <button class="pf-tab-btn btn-all">ALL</button>
-                            <button class="pf-tab-btn btn-redesign">REDESIGN</button>
-                            <button class="pf-tab-btn btn-copy">COPY</button>
+                            <button class="pf-tab-btn tab-head btn-all" data-tab-head="0">ALL</button>
+                            <button class="pf-tab-btn tab-head btn-redesign" data-tab-head="1">REDESIGN</button>
+                            <button class="pf-tab-btn tab-head btn-copy" data-tab-head="2">COPY</button>
                         </div>
-                        <div class="pf-slide" dir="rtl">
-                            <div class="item item1 active" data-item-tab="1" data-slide-index="01"></div>
-                            <div class="item item2" data-item-tab="2" data-slide-index="02"></div>
-                            <div class="item item3" data-item-tab="2" data-slide-index="03"></div>
-                            <div class="item item4" data-item-tab="2" data-slide-index="04"></div>
-                            <div class="item item5" data-item-tab="2" data-slide-index="05"></div>
+                        <div class="pf-slide preview-slider" dir="rtl">
+                            <div class="item item1 active" data-slide-tab="1" data-slide-index="01"></div>
+                            <div class="item item2" data-slide-tab="2" data-slide-index="02"></div>
+                            <div class="item item3" data-slide-tab="2" data-slide-index="03"></div>
+                            <div class="item item4" data-slide-tab="2" data-slide-index="04"></div>
+                            <div class="item item5" data-slide-tab="2" data-slide-index="05"></div>
                         </div>
                     </div>
                 </div>
                 <!-- 포트폴리오 아이템 이미지 박스 -->
-                <div class="portfolio-img-box">
+                <div class="portfolio-img-box ps-img-box">
                     <ul class="pf-img-list">
                         <li class="pf-img active" style="background-image:url(./resource/site-coca-img.png)">
                             <a href="/pf/cocacola/index.php" target="_blank"></a>
