@@ -121,7 +121,7 @@
     <div id="wrap">
         <!-- 인트로 페이지 -->
         <header class="intro puzzle-bg-v1 section-page actived-on-visible" data-page-index="0">
-            <div class="con flex">
+            <div class="con wrap flex">
                 <h2 class="title flex-column line-height-0">
                     <span class="sound-only">WEB PUBLISHER/DESIGNER</span>
                     <div class="ti1 font-Fredericka">
@@ -171,15 +171,6 @@
                             c-17,0-30.8-13.8-30.8-30.8S252.9,154.3,269.9,154.3z" />
                         </svg>
                     </div>
-                </div>
-                <div class="icon-scroll">
-                    <svg version="1.1" id="layer" xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30 54"
-                        style="enable-background:new 0 0 30 54;" xml:space="preserve">
-                        <polygon class="icon-scroll-path" points="27,36 15,48 3,36 0,39 15,54 30,39 " />
-                        <polygon class="icon-scroll-path" points="27,18 15,30 3,18 0,21 15,36 30,21 " />
-                        <polygon class="icon-scroll-path" points="27,0 15,12 3,0 0,3 15,18 30,3 " />
-                    </svg>
                 </div>
             </div>
             <div class="icon-scroll">
