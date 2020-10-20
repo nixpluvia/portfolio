@@ -733,14 +733,11 @@ section {
 }
 
 /* 인트로 스크롤 아이콘 */
-.intro .icon-scroll {
-    position: absolute;
-    left: 50%;
-    bottom: 50px;
-    transform: translateX(-50%);
-}
 .icon-scroll-path {
     fill: #ffffff;
+}
+.intro .title {
+    margin-left: 0;
 }
 .intro .icon-scroll {
     position: absolute;
@@ -2039,6 +2036,22 @@ footer {
 
 /* pc, laptop, tablet width */
 @media (max-width: 1024px) {
+    .intro .wrap {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+    .intro .title {
+        margin-left: -28px;
+        margin-bottom: 0;
+    }
+    .intro .intro-img {
+        margin-right: 0;
+        margin-bottom: 8vh;
+        margin-left: -84px;
+    }
+
+
     .portfolio .portfolio-img-box {
         min-width: 400px;
     }
