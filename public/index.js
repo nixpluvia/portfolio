@@ -271,7 +271,15 @@ function slickSlide_init() {
         arrows: true,
         appendArrows: $('.design .design-slide-arrows'),
         prevArrow : '<div class="prev"><img src="./resource/arrow-left.svg"></div>',
-        nextArrow : '<div class="next"><img src="./resource/arrow-right.svg"></div>'
+        nextArrow : '<div class="next"><img src="./resource/arrow-right.svg"></div>',
+        responsive: [
+            {
+                breakpoint: 769,
+                settings: {
+                variableWidth: true
+                }
+            }
+        ]
     });
 
     // $('.pf-slide').slick({
