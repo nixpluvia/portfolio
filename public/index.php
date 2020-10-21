@@ -442,7 +442,10 @@
                         <ul class="pf-items">
                             <li class="pf-item active">
                                 <div class="pf-item-title-bar flex">
-                                    <h3 class="pf-item-title">COCACOLA</h3>
+                                    <h3 class="pf-item-title">
+                                        <a href=""></a>
+                                        COCACOLA
+                                    </h3>
                                     <div class="device-icon flex-ai-c">
                                         <div class="icon-computer">
                                             <img src="./resource/icon-desktop.svg" alt="">
@@ -470,6 +473,14 @@
                                         단조로움을 피하는 디자인을 진행 했습니다.
                                     </p>
                                 </div>
+                                <div class="btn-box flex">
+                                    <button class="btn-origin">
+                                        <a class="font-noto" href="https://www.coca-colacompany.com/" target="_blank">ORIGINAL</a>
+                                    </button>
+                                    <button class="btn-demo">
+                                        <a class="font-noto" href="/pf/cocacola/index.php" target="_blank">DEMO</a>
+                                    </button>
+                                </div>
                             </li>
                             <li class="pf-item">
                                 <div class="pf-item-title-bar flex">
@@ -496,6 +507,14 @@
                                         숫자 증가 기능과 2개의 슬라이드 방식을 시험해 볼 수 있었습니다.
                                     </p>
                                 </div>
+                                <div class="btn-box flex">
+                                    <button class="btn-origin">
+                                        <a class="font-noto" href="http://www.artfive.co.kr/" target="_blank">ORIGINAL</a>
+                                    </button>
+                                    <button class="btn-demo">
+                                        <a class="font-noto" href="/pf/artfive/index.php" target="_blank">DEMO</a>
+                                    </button>
+                                </div>
                             </li>
                             <li class="pf-item">
                                 <div class="pf-item-title-bar flex">
@@ -521,6 +540,14 @@
                                         DESIGN PIXEL 사이트의 슬라이드 방식과 애니메이션 등을 구현해보기 위해 선정하여 사이트를 구현했습니다.
                                         세로 방식의 정렬과 다양한 애니메이션들을 구사해 볼 수 있었습니다.
                                     </p>
+                                </div>
+                                <div class="btn-box flex">
+                                    <button class="btn-origin">
+                                        <a class="font-noto" href="https://designpixel.co.kr/" target="_blank">ORIGINAL</a>
+                                    </button>
+                                    <button class="btn-demo">
+                                        <a class="font-noto" href="/pf/designpixel/index.php" target="_blank">DEMO</a>
+                                    </button>
                                 </div>
                             </li>
                             <li class="pf-item">
@@ -549,6 +576,14 @@
                                         첫 원페이지 방식의 구현이라 완벽하지 않지만 다양한 기능을 배울 수 있었습니다.
                                     </p>
                                 </div>
+                                <div class="btn-box flex">
+                                    <button class="btn-origin">
+                                        <a class="font-noto" href="http://www.eheimish.com/" target="_blank">ORIGINAL</a>
+                                    </button>
+                                    <button class="btn-demo">
+                                        <a class="font-noto" href="/pf/heimish/index.php" target="_blank">DEMO</a>
+                                    </button>
+                                </div>
                             </li>
                             <li class="pf-item">
                                 <div class="pf-item-title-bar flex">
@@ -575,6 +610,14 @@
                                         첫 카피 사이트로 opacity방식의 슬라이드와 구현했습니다.
                                         요소 발견 애니메이션도 구현해 볼 수 있었습니다.
                                     </p>
+                                </div>
+                                <div class="btn-box flex">
+                                    <button class="btn-origin">
+                                        <a class="font-noto" href="https://cleaderm.co.kr/" target="_blank">ORIGINAL</a>
+                                    </button>
+                                    <button class="btn-demo">
+                                        <a class="font-noto" href="/pf/cleaderm/index.php" target="_blank">DEMO</a>
+                                    </button>
                                 </div>
                             </li>
                         </ul>
