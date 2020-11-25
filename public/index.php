@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
-
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="keywords" content="nixpluvia,Web Designer,Web Publisher,portfolio,웹디자이너,웹퍼블리셔,포트폴리오">
+    <meta name="description" content="이호연 웹디자이너 포트폴리오">
+    <meta name="author" content="이호연">
+    <!--제이쿼리 플러그인-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+    <!--슬릭슬라이드 플러그인-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
-
+    
     <link rel="stylesheet" href="./index.css">
     <script src="./index.js"></script>
     <title>LeeHoyeon Portfolio</title>

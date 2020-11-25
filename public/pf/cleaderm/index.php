@@ -82,6 +82,11 @@
             </div>
         </nav>
 
+        <div class="side-menu"></div>
+        <button class="top-button">
+            <img src="./resource/top_arrow_icon.png" alt="">
+        </button>
+
         <div class="top-bn-slider">
             <div class="slides">
                 <a class="slide active" href="#" style="background-image:url(./resource/main_s22.jpg)"></a>
@@ -114,7 +119,7 @@
             <iframe width="853" height="480" src="https://www.youtube.com/embed/0Pq39JhXw0E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
 
-        <div class="main-section-1 flex">
+        <div class="main-section-1 flex actived-on-visible" data-AOV-diff-y="600">
             <a class="ms1-text" href="#">
                 <h2>피부 예방 전문가, 닥터락토</h2>
                 <div>
@@ -131,9 +136,9 @@
             </a>
         </div>
 
-        <div class="best-seller-section">
+        <div class="best-seller-section actived-on-visible" data-AOV-diff-y="600">
             <h2>Best Seller</h2>
-            <ul class="best-seller-box flex">
+            <ul class="best-seller-box flex actived-on-visible" data-AOV-diff-y="600">
                 <li>
                     <a href="#">
                         <div class="product-img-box">
@@ -171,7 +176,7 @@
         </div>
 
         <div class="product-list-section">
-            <ul class="flex">
+            <ul class="flex actived-on-visible" data-AOV-diff-y="600">
                 <li class="pd-1 pd-list-1">
                     <a class="block" href="#">
                         <div class="product-img-box">
@@ -318,6 +323,9 @@
                         </div>
                     </a>
                 </li>
+                
+            </ul>
+            <ul class="flex actived-on-visible" data-AOV-diff-y="600">
                 <li class="pd-6 pd-list-2">
                     <a class="block" href="#">
                         <div class="product-img-box">

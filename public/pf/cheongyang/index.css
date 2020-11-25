@@ -259,10 +259,27 @@ button {
     flex-wrap: wrap;
 }
 
+.sound-only {
+    display: block;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
 /* custom */
 header{
     position: absolute;
     width: 100%;
     height: 85px;
     background-color: pink;
+}
+
+.top-wrap > .logo{
+    position: absolute;
+    top: 15px;
+    left: 35px;
 }

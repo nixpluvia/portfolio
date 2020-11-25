@@ -1,5 +1,11 @@
 // 부모에게 active 클래스 추가하는 함수 시작
+// parent addClass start
 function sideBarToggle(e) {
+    if( $('html').data('data-Click-prevent') == true ) {
+        e.stopPropagation();
+        e.preventDefault();
+        return false;
+    }
     var $this = $(this);
     var $parent = $this.closest('.side-bar');
     var $shadow = $('.side-shadow');
@@ -23,9 +29,25 @@ function sideBarToggle(e) {
     }
 }
 // 부모에게 active 클래스 추가하는 함수 끝
+// parent addClass end
+
+// 인트로 스크롤, 클릭 방지 시작
+// intro scroll prevent start
+function introPrevent(){
+    $('html').data('data-Wheel-prevent', true);
+    $('html').data('data-Click-prevent', true);
+
+    setTimeout(function(){
+        $('html').data('data-Wheel-prevent', false);
+        $('html').data('data-Click-prevent', false);
+    }, 5000)
+}
+// 인트로 스크롤, 클릭 방지 끝
+// intro scroll prevent end
 
 
 // 라인 애니메이션 딜레이 시작
+//line animation delay start
 function lineAni__init() {
     var line = $('.intro > .title > div');
     var arrLine = [line.eq(0), line.eq(1), line.eq(2)];
@@ -40,10 +62,11 @@ function lineAni__init() {
     }
 }
 // 라인 애니메이션 딜레이 끝
-
+//line animation delay end
 
 
 // 탭박스 함수 시작
+// tab box function start
 function tabBox__init() {
     $('[data-tab-head-item-name]').click(function () {
         var $this = $(this);
@@ -71,10 +94,12 @@ function tabBox__init() {
     });
 }
 // 탭박스 함수 끝
+// tab box function end
 
 
 
 // 숫자 증가 함수 시작
+// number increase function start
 function numIncrease__init() {
     $(".info-num").each(function () {
         var $this = $(this);
@@ -97,9 +122,11 @@ function numIncrease__init() {
     });
 }
 // 숫자 증가 함수 끝
+// number increase function end
 
 
 // 프로그레스 바 애니메이션 시작
+// progressBar animation start
 function progressAni__init() {
     $('.progress-bar > .bar').each(function () {
         var $this = $(this);
@@ -120,12 +147,14 @@ function progressAni__init() {
     });
 }
 // 프로그레스 바 애니메이션 끝
-
+// progressBar animation end
 
 
 // 발견 하는 함수 시작
+// search scroll function start
 
 // 발견 요소의 offset 설정
+// search element offset setting
 function ActiveOnVisible__initOffset() {
     $(".active-on-visible, .actived-on-visible").each(function (index, node) {
         var $node = $(node);
@@ -149,6 +178,7 @@ function ActiveOnVisible__initOffset() {
 
 function ActiveOnVisible__checkAndActive() {
     // 발견하면 클래스 추가하기
+    // search element addClass
     $(".active-on-visible, .actived-on-visible").each(function (index, node) {
         var $node = $(node);
         var $actived;
@@ -177,6 +207,7 @@ function ActiveOnVisible__checkAndActive() {
                     if ( $actived.hasClass('actived') == false ) {
                         $actived.addClass('actived');
                         // 함수 실행
+                        // function execution
                         if( $actived.hasClass('profile2') ){
                             progressAni__init();
                             numIncrease__init();
@@ -187,6 +218,7 @@ function ActiveOnVisible__checkAndActive() {
         }
 
         // 페이지 네비게이션 컬러 이벤트 용
+        // pagenation color event 
         if ($node.hasClass('section-page') && $(window).scrollTop() >= offsetTop && $(window).scrollTop() <= offsetBottom) {
             if ($(window).scrollTop() < offsetBottom - HalfHeight) {
                 $('body').attr('data-dot-page-index', parseInt($node.attr('data-page-index')));
@@ -198,6 +230,7 @@ function ActiveOnVisible__checkAndActive() {
     });
 
     // 벗어나면 클래스 제거
+    // escape removeClass
     $(".active-on-visible.active").each(function (index, node) {
         var $node = $(node);
 
@@ -220,19 +253,30 @@ function ActiveOnVisible__checkAndActive() {
 // 발견 함수 실행함수
 function ActiveOnVisible__init() {
     // 최초실행
+    // first run
     setTimeout(function(){
         ActiveOnVisible__initOffset();
     }, 1000);
     ActiveOnVisible__checkAndActive();
     
-
+    //윈도우 리사이즈 재설정
+    //window resize reset
     $(window).resize(ActiveOnVisible__initOffset);
     $(window).scroll(ActiveOnVisible__checkAndActive);
 }
 
 // 발견 하는 함수 끝
+// search scroll function start
 
-function pagenation(){
+
+// 페이지 네비게이션 함수 시작
+// pagenation function start
+function pagenation(e){
+    if( $('html').data('data-Click-prevent') == true ) {
+        e.stopPropagation();
+        e.preventDefault();
+        return false;
+    }
     var $this = $(this);
     var dotIndex = $this.index();
     var $section = $('#wrap > .section-page').eq(dotIndex);
@@ -249,7 +293,7 @@ function pagenation(){
     }, 1000);
 }
 
-// pagenation 함수 시작
+
 function pagenation__init(){
     $('.pagenation > ul > li').click(pagenation);
 
@@ -258,11 +302,12 @@ function pagenation__init(){
 }
 
 
-// pagenation 함수 끝
+// 페이지 네비게이션 함수 끝
+// pagenation function end
 
 
-
-// slick 슬라이드 시작
+// 슬릭 슬라이드 시작
+// slick slide start
 function slickSlide_init() {
     $('.slick-slider1').slick({
         dots:false,
@@ -281,49 +326,14 @@ function slickSlide_init() {
             }
         ]
     });
-
-    // $('.pf-slide').slick({
-    //     infinite: false,
-    //     dots:false,
-    //     arrows: false,
-    //     rtl: true,
-    //     slidesToShow: 3,
-    //     variableWidth: true,
-    //     swipe: true,
-    //     swipeToSlide: true,
-    //     responsive: [
-    //         {
-    //             breakpoint: 1024,
-    //             settings: {
-    //             slidesToShow: 2
-    //             }
-    //         },
-    //         {
-    //             breakpoint: 900,
-    //             settings: {
-    //                 slidesToShow: 1
-    //             }
-    //         }
-    //     ]
-    // })
-    
-    // $('.btn-all').on('click', function () {
-    //     $('.pf-slide').slick('slickUnfilter');
-    // });
-    // $('.btn-redesign').on('click', function () {
-    //     $('.pf-slide').slick('slickUnfilter');
-    //     $('.pf-slide').slick('slickFilter', '[data-item-tab=1]');
-    // });
-    // $('.btn-copy').on('click', function () {
-    //     $('.pf-slide').slick('slickUnfilter');
-    //     $('.pf-slide').slick('slickFilter', '[data-item-tab=2]');
-    // });
 }
-// slick 슬라이드 끝
+// 슬릭 슬라이드 끝
+// slick slide end
 
 
+// 미리보기 슬릭 슬라이더 시작
+// preview slick slider start
 function prevSlider__init() {
-    // 미리보기 슬릭 슬라이더
     $(".preview-slider").slick({
         rtl: true,
         dots: false,
@@ -333,6 +343,7 @@ function prevSlider__init() {
         slidesToScroll: 2,
         variableWidth: true,
         // 반응형
+        // responsive
         responsive: [
             {
                 breakpoint: 1024,
@@ -351,6 +362,7 @@ function prevSlider__init() {
         ]
     });
     // 슬라이드 아이템 클릭 이벤트
+    // slide item click event
     $(".preview-slider .item").click(function () {
         var $this = $(this);
         var $sliderItems = $this.parent().find("> .item");
@@ -374,6 +386,7 @@ function prevSlider__init() {
     });
 
     // 슬라이드 탭 버튼
+    // slide tab button
     $(".slider-tab-head .tab-head").click(function () {
         var $this = $(this);
 
@@ -404,58 +417,18 @@ function prevSlider__init() {
     });
 
 
-
     $('.portfolio .btn-all').click();
 }
-// // 포트폴리오 클릭 함수 시작
-// function portfolioSlideClick(){
-//     var $this = $(this);
-//     var $itemList = $this.parent().find(' > .item');
-//     var itemIndex = $this.attr('data-slick-index');
-//     var $pfImg = $('.portfolio .pf-img-list > li');
-//     var $pfContent = $('.portfolio .pf-items > li');
-
-//     $itemList.removeClass('active');
-//     $pfImg.removeClass('active');
-//     $pfContent.removeClass('active');
-
-//     $this.addClass('active');
-//     $pfImg.eq(itemIndex).addClass('active');
-//     $pfContent.eq(itemIndex).addClass('active');
-// }
-
-// // 포트폴리오 탭 클릭
-// function portfolioTabClick(){
-//     var $this = $(this);
-//     var thisWidth = $this.outerWidth();
-//     var leftPosition = $this.position().left;
-//     var ParentWidth = $this.closest('.pf-tab-bar').outerWidth();
-//     var rightPostion = ParentWidth - leftPosition - thisWidth - 65;
-//     var $btnBg = $('.portfolio .btn-bg-bar');
-
-//     $this.parent().find('> .pf-tab-btn').removeClass('active');
-//     $this.addClass('active');
-//     $btnBg.css('width', thisWidth + 30 +'px');
-//     $btnBg.css('right', rightPostion + 'px');
-// }
+// 미리보기 슬릭 슬라이더 끝
+// preview slick slider end
 
 
 
-// function portfolioClick__init(){
-//     $('.pf-slide .item').click(portfolioSlideClick);
+// 팝업 함수 시작
+// popup function start
 
-//     $('.portfolio .pf-tab-btn').click(portfolioTabClick);
-//     $('.portfolio .btn-all').click();
-// }
-
-
-
-
-
-
-// 포트폴리오 클릭 함수 끝
-
-// 팝업 함수
+//팝업 열기
+// popup open
 function popupOpen() {
     var $this = $(this);
     var itemIndex = $this.attr('data-popup-index');
@@ -470,6 +443,8 @@ function popupOpen() {
     $popupItem.eq(itemIndex).addClass('active');
 }
 
+//팝업 닫기
+// popup close
 function popupClose() {
     var $popupBox = $('.popup-box');
     var $popupBg = $('.popup-bg');
@@ -482,6 +457,8 @@ function popupClose() {
     $popupItem.removeClass('active');
 }
 
+//팝업 목록 진행 버튼
+//popup list arrow button
 function popupArrow() {
     var $this = $(this);
     var $popupBox = $this.closest('.popup-box');
@@ -504,32 +481,8 @@ function popupArrow() {
     $popupItem.removeClass('active');
     post.addClass('active');
 }
-
-
-// 클릭 이벤트 모음
-function click__init(){
-    // 사이드 바 클릭 이벤트
-    $('.btn-side-bar').click(sideBarToggle);
-    // 탭박스 클릭 이벤트
-    $('[data-tab-name="box-2"][data-tab-head-item-name="1"]').click();
-    $('.portfolio > .content-box > .head > button').click(ActiveOnVisible__initOffset);
-
-    // 팝업 클릭 이벤트
-    $('.btn-popup-item').click(popupOpen);
-    $('.popup-bg, .btn-close').click(popupClose);
-    $('.popup-button > button').click(popupArrow);
-}
-
-function scroll_init(){
-    // 스크롤 이벤트 버블링 방지
-    $('#wrap, .side-bar, .side-shadow, .popup-bg, .popup-box .btn-close, .popup-box .popup-button').on('mousewheel DOMMouseScroll',function(e){
-        if ( $('html').data('data-Wheel-prevent') == true ) {
-            e.stopPropagation();
-            e.preventDefault();
-            return ;
-        }
-    })
-    // 팝업 이미지 스크롤 방지 이벤트
+// 팝업 이미지 스크롤 방지 이벤트
+function popupScrollPrevnet(){
     $('.popup-prevent').on('mousewheel DOMMouseScroll',function(e){
         var $this = $(this);
         var thisHeight = $this.outerHeight();
@@ -557,34 +510,94 @@ function scroll_init(){
         }
     })
 }
+// 팝업 함수 끝
+// popup function end
+
+
+// 클릭 이벤트 모음
+// click event collection
+function click__init(){
+    // 사이드 바 클릭 이벤트
+    // side bar click event
+    $('.btn-side-bar').click(sideBarToggle);
+
+    // 탭박스 클릭 이벤트
+    // tab box click event
+    $('[data-tab-name="box-2"][data-tab-head-item-name="1"]').click();
+    $('.portfolio > .content-box > .head > button').click(ActiveOnVisible__initOffset);
+
+    // 팝업 클릭 이벤트
+    // popup click event
+    $('.btn-popup-item').click(popupOpen);
+    $('.popup-bg, .btn-close').click(popupClose);
+    $('.popup-button > button').click(popupArrow);
+
+    // 스크롤 아이콘 클릭 이벤트
+    // scroll icon click event
+    $('.icon-scroll').click(function(){
+        $('html').data('data-Wheel-prevent', false);
+        $('html').data('data-Click-prevent', false);
+        $('.pagenation > ul > li:nth-child(2)').click();
+    })
+}
+
+// 이벤트 방지 시작
+// event prevent start
+function prevent__init(){
+    // 스크롤 이벤트 버블링 방지
+    $('#wrap, .side-bar, .side-shadow, .popup-bg, .popup-box .btn-close, .popup-box .popup-button').on('mousewheel DOMMouseScroll',function(e){
+        if ( $('html').data('data-Wheel-prevent') == true ) {
+            e.stopPropagation();
+            e.preventDefault();
+            return ;
+        }
+    })
+    $('#wrap, .side-bar, .side-shadow, .popup-bg, .popup-box .btn-close, .popup-box .popup-button').on('touchmove',function(e){
+        if ( $('html').data('data-Wheel-prevent') == true ) {
+            e.stopPropagation();
+            e.preventDefault();
+            return ;
+        }
+    })
+}
+// 이벤트 방지 끝
+// event prevent end
+
+
+
 
 
 
 $(function () {
+    // 인트로 방지
+    introPrevent();
     // 라인 애니메이션
     lineAni__init();
+   
+    // 클릭 이벤트 모음
+    click__init();
+
+    // 페이지 네비게이션
+    pagenation__init();
+
+    // 팝업 스크롤 방지
+    popupScrollPrevnet();
+
+    // 발견 함수
+    ActiveOnVisible__init();
+
     // 탭박스 함수
     tabBox__init();
 
     // 슬라이드
     slickSlide_init();
 
-    // portfolioClick__init();
-
-    // 인트로 페이지 함수
-    // introAni__init();
-
-    // 발견 함수
-    ActiveOnVisible__init();
-
-    // 클릭 이벤트 모음
-    click__init();
-
-    pagenation__init();
-
-    scroll_init();
-
+    // 미리보기 슬라이드
     prevSlider__init();
+
+     // 방지 이벤트
+     prevent__init();
+    
 });
 
 // // 시작 위치 초기화

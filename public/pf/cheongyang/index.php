@@ -10,10 +10,64 @@
 <body>
     <header>
         <div class="top-wrap">
+            <h1 class="logo">
+                <span class="sound-only">청양군 지역활성화재단</span>
+                <a class="block" href="#"><img src="./resource/logo2.png" alt="청양군 지역활성화재단"></a>
+            </h1>
+            <ul class="util-wrap">
+                <li class=""></li>
+                <li class="pc">
+                    <a href="#">전체메뉴</a>
+                </li>
+                <li class="mo"></li>
+            </ul>
         </div>
         <div class="gnb-layout">
             <ul class="gnb"></ul>
         </div>
     </header>
+    <section class="main-cont">
+        <div class="slide"></div>
+        <div class="layout">
+            <ul class="notice">
+                <ul class="menu-wrap">
+                    <li class="menu-tab1"></li>
+                    <li class="menu-tab2"></li>
+                    <li class="menu-tab3"></li>
+                </ul>
+                <div class="menu-con-wrap">
+                    <div class="con-tab1">
+                        <div class="inner-menu">
+                            <ul class="wrap">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="inner-con-wrap">
+                            <div class="inner-con-1">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="inner-con-2">
+                                <div></div>
+                            </div>
+                            <div class="inner-con-3">
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="con-tab2"></div>
+                    <div class="con-tab3"></div>
+                </div>
+            </ul>
+        </div>
+    </section>
+    <section class="body-cont">
+
+    </section>
+    <footer class="foot-layout"></footer>
 </body>
 </html>

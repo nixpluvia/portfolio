@@ -1,4 +1,13 @@
+// click prevent
+function prevent__init(){
+    $('a').click(function(e){
+        e.stopPropagation();
+        e.preventDefault();
+        return false;
+    });
+}
 
+// slide function start
 function slide(){
     var $this = $(this);
     var $thisLeft = $this.index() == 0;
@@ -43,7 +52,8 @@ function slideDots() {
     $this.addClass('active');
 }
 
-/* 슬라이드 인터벌 */
+
+/* slide auto play */
 function slideInterval(){
     setInterval(function(){
         $('.top-bn-slider > .slide-button > span:last-child').click();
@@ -54,8 +64,9 @@ function slide__init(){
     $('.top-bn-slider > .slide-button > span').click(slide);
     $('.top-bn-slider > .btn-slide-dots > li').click(slideDots);
 }
+// slide function end
 
-
+//search box start
 function searchClick(){
     var $this = $(this);
     if ($this.hasClass('active')) {
@@ -69,50 +80,70 @@ function searchClick(){
 function searchClick__init(){
     $('.search-icon-box').click(searchClick);
 }
+//search box start
 
 
-/* 요소의 높이 값 */
-var windowHeight = $(window).height();
+function ActiveOnVisible__initOffset() {
+    $(".active-on-visible, .actived-on-visible").each(function (index, node) {
+        var $node = $(node);
 
-function scrollEvent(){
-    var $this = $(this);
-    var st = $this.scrollTop();
-    var mainSectionT = $('.main-section-1').offset().top;
-    var bestSectionT = $('.best-seller-section').offset().top;
-    var bs_productT = $('.best-seller-section > ul > li > a > .product-img-box').offset().top;
-    var product1T = $('.product-list-section > ul > li.pd-1').offset().top;
-    var product2T = $('.product-list-section > ul > li.pd-6').offset().top;
+        var offsetTop = $node.offset().top;
+        var offsetBottom = offsetTop + $node.outerHeight();
+        $node.attr("data-AOV-offsetTop", offsetTop);
+        $node.attr("data-AOV-offsetBottom", offsetBottom);
 
-    if (st > (mainSectionT - windowHeight + 300)) {
-        $('.main-section-1').addClass('active');
-    }
+        if (!$node.attr("data-AOV-diff-y")) {
+            $node.attr("data-AOV-diff-y", "0");
+        }
 
-    if (st > (bestSectionT - windowHeight + 300)) {
-        $('.best-seller-section').addClass('active');
-    }
+        if (!$node.attr("data-AOV-delay")) {
+            $node.attr("data-AOV-delay", "0");
+        }
+    });
 
-    if (st > (bs_productT - windowHeight + 300)) {
-        $('.best-seller-section > ul > li > a > .product-img-box').addClass('active');
-    }
-    if (st > (product1T - windowHeight + 300)) {
-        $('.product-list-section > ul > li.pd-list-1').addClass('active');
-    }
-    if (st > (product2T - windowHeight + 300)) {
-        $('.product-list-section > ul > li.pd-list-2').addClass('active');
-    }
+    ActiveOnVisible__checkAndActive();
 }
 
+function ActiveOnVisible__checkAndActive() {
+    // 발견하면 클래스 추가하기
+    $(".active-on-visible, .actived-on-visible:not(.actived)").each(function (index, node) {
+        var $node = $(node);
+        var $actived;
+        if ($node.hasClass("actived-on-visible")) {
+            $actived = $(node);
+        }
 
-function windowScroll() {
-    $(window).scroll(scrollEvent);
+        var winSt = $(window).scrollTop();
+
+        var offsetTop = parseInt($node.attr("data-AOV-offsetTop"));
+        var offsetBottom = parseInt($node.attr("data-AOV-offsetBottom"));
+        var diffY = parseInt($node.attr("data-AOV-diff-y"));
+        var delay = parseInt($node.attr("data-AOV-delay"));
+
+        if (winSt + diffY > offsetBottom == false && winSt + diffY >= offsetTop) {
+            setTimeout(function () {
+                if ($actived == undefined) {
+                    $node.addClass("active");
+                } else {
+                    $actived.addClass("actived");
+                }
+            }, delay);
+        }
+    });
 }
 
-
+function AOV__init(){
+    ActiveOnVisible__initOffset();
+    ActiveOnVisible__checkAndActive();
+    $(window).resize(ActiveOnVisible__initOffset);
+    $(window).scroll(ActiveOnVisible__checkAndActive);
+}
 
 /* 실행 */
 $(function(){
     slide__init();
     slideInterval();
     searchClick__init();
-    windowScroll();
+    // windowScroll();
+    AOV__init();
 });
