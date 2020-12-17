@@ -5,19 +5,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>대신경제연구소</title>
 
+        <!-- 제이쿼리 플러그인 -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- lodash 플러그인 -->
+        <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>
 
         <link rel="stylesheet" href="./index.css">
         <script src="./index.js"></script>
     </head>
     <body>
-        <header class="top-bar flex">
-            <h1 class="logo ">
+        <!-- global bar -->
+        <header class="global flex">
+            <!-- global logo -->
+            <h1 class="logo">
                 <div class="sound-only">대신경제연구소</div>
                 <a class="img-box" href="#">
                     <img src="./resource/main_logo.png" alt="logo">
                 </a>
             </h1>
+            <!-- global menu bar -->
             <nav class="top-menu gnb">
                 <ul class="flex">
                     <li class="gnb-menu-1">
@@ -155,30 +161,645 @@
             </nav>
         </header>
 
+        <!-- main container -->
         <div class="container">
-            <section class="intro-section con">
-                <div class="content">
-                    <h2 class="txt1">
-                        <span class="em">
-                        지배구조와
-                        <br>
-                        금융공학 연구
-                        </span>
-                        <span class="small">를 통하여</span>
-                    </h2>
-                    <p class="txt2">
-                        주주의 가치향상과 투자자의 수익률 제고를 위해
-                        <br>
-                        끊임없이 노력하는 국내 최고 연구소를 지향하고 있습니다.
-                    </p>
-                    <div class="btn">
-                        <a href="#"></a>
+            <!-- 인트로 섹션 intro -->
+            <section class="section intro-section">
+                <div class="wrap con">
+                    <!-- 텍스트 컨텐츠 -->
+                    <div class="content">
+                        <h2 class="txt1">
+                            <span class="em">
+                            지배구조와
+                            <br>
+                            금융공학 연구
+                            </span>
+                            <span class="small">를 통하여</span>
+                        </h2>
+                        <p class="txt2">
+                            주주의 가치향상과 투자자의 수익률 제고를 위해
+                            <br>
+                            끊임없이 노력하는 국내 최고 연구소를 지향하고 있습니다.
+                        </p>
+                        <div class="btn">
+                            <a href="#">자세히 보기</a>
+                        </div>
+                    </div>
+                    <!-- 이미지 배경 -->
+                    <div class="bg-1 img-box">
+                        <img src="./resource/main_cont_head_2.png" alt="메인 인트로 이미지">
+                    </div>
+                    <div class="bg-2 img-box">
+                        <img src="./resource/visual_mask.png" alt="메인 인트로 이미지">
+                    </div>
+                    <div class="bg-3"></div>
+                </div>
+            </section>
+            <!-- 뉴스 news -->
+            <section class="section cont-news">
+                <div class="wrap con">
+                    <h2 class="section-ti">지배구조 이슈 및 동향</h2>
+                    <ul class="flex">
+                        <li class="issue">
+                            <div class="item-head">
+                                <div class="tag-img v1"></div>
+                                <div class="tag">ISSUE REPORT</div>
+                                <h3 class="head">
+                                    <a class="block" href="#">LG화학, 분할계획서 승인의 건 관련 이슈 점검</a>
+                                </h3>
+                            </div>
+                            <div class="item-cont">
+                                <a class="block" href="#">
+                                    <div class="txt-box">
+                                        <p>
+                                            &lt;분할계획서 승인의 건&gt;
+                                        </p>
+                                        <p>
+                                            : 분할의 명분과 지분가치 희석 우려를 보완할 주주환원 방안 필요
+                                        </p>
+                                        <br>
+                                        <p>
+                                            ㈜LG화학(이하 분석기업) 전지사업부문의 물적분할 후 기업공개 계획이
+                                             신설법인의 성장가치 제고에 필요 요건임에도 불구 지분가치 희석의 우려가 제기되는 등 논란이 되고 있음. 
+                                        </p>
+                                    </div>
+                                    <div class="detail flex">
+                                        <div class="date flex">2020.10.14</div>
+                                        <div class="btn">자세히 보기</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="weekly">
+                            <div class="item-head">
+                                <div class="tag-img v2"></div>
+                                <div class="tag">WEEKLY</div>
+                                <h3 class="head">
+                                    <a class="block" href="#">ESG Review(20/12/07)</a>
+                                </h3>
+                            </div>
+                            <div class="item-cont">
+                                <a class="block" href="#">
+                                    <div class="txt-box">
+                                        <p>I. 국내 기업 ESG 동향</p>
+                                        <p>II. 산업 내 ESG 동향</p>
+                                        <p>III. ESG 관련 규제 및 정책 동향</p>
+                                        <p>IV. 글로벌 ESG 동향</p>
+                                        <p>V. 1% 이상 지분 변동 기업</p>
+                                        <p class="normal">
+                                            <span>&nbsp;&nbsp;</span>
+                                            주식 등의 1% 이상 지분 변동 기업 (11/27~12/04 공시 기준)
+                                        </p>
+                                    </div>
+                                    <div class="detail flex">
+                                        <div class="date flex">2020.12.07</div>
+                                        <div class="btn">자세히 보기</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="analysis">
+                            <div class="item-head">
+                                <div class="tag-img v3"></div>
+                                <div class="tag">주주총회 의안 분석</div>
+                                <h3 class="head">
+                                    <a class="block" href="#">
+                                        2020년 &nbsp;임시주주총회
+                                        <br>
+                                        티와이홀딩스
+                                    </a>
+                                </h3>
+                            </div>
+                            <div class="item-cont">
+                                <a class="block" href="#">
+                                    <div class="txt-box">
+                                        <h4 class="cont-head">기업개요</h4>
+                                        <ul>
+                                            <li>
+                                                <span class="list-head">상장코드</span>
+                                                <span class="list-body">363280</span>
+                                            </li>
+                                            <li>
+                                                <span class="list-head">업&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;종</span>
+                                                <span class="list-body">증권</span>
+                                            </li>
+                                            <li>
+                                                <span class="list-head">주요주주</span>
+                                                <span class="list-body">윤석민 외 3인 (38.32%), 국민연금공단 (12.80%), 한국투자신탁운용 (5.07%)</span>
+                                            </li>
+                                        </ul>
+                                        <h4 class="cont-head">주주총회 개요</h4>
+                                        <ul>
+                                            <li>
+                                                <span class="list-head">종&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;류</span>
+                                                <span class="list-body">임시주주총회</span>
+                                            </li>
+                                            <li>
+                                                <span class="list-head">일&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;시</span>
+                                                <span class="list-body">2020년 11월 26일(목) 오전 10:00</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="detail flex">
+                                        <div class="date flex">2020.11.24</div>
+                                        <div class="btn">자세히 보기</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <!-- 리서치 research -->
+            <section class="section research">
+                <div class="bg"></div>
+                <div class="wrap con">
+                    <div class="cont-head">
+                        <h2 class="section-ti">지배구조 연구</h2>
+                        <p>
+                            대신경제연구소의 지배구조연구소는 기업지배구조 개선을 통해 중.장기적으로 주주가치 향상과 자본시장 선진화에
+                            <br>
+                            기여할 수 있도록 <strong>기업지배구조 평가, 주주총회 의안분석 및 지배구조 펀드 컨설팅 등의 서비스</strong>를 제공하고 있습니다.
+                        </p>
+                    </div>
+                    <div class="cont-body">
+                        <ul class="flex">
+                            <li class="circle-list v1">
+                                <div class="list-icon v1"></div>
+                                <h3 class="list-ti">PRACTICAL EXPERIENCE</h3>
+                                <p class="list-txt">
+                                    시장 경험이 풍부한 각계 전문가 구성
+                                    <br>
+                                    금감원 출신, 애널리스트, 공인회계사,
+                                    <br>
+                                    지배구조 전문가등
+                                </p>
+                            </li>
+                            <li class="circle-list v2">
+                                <div class="list-icon v2"></div>
+                                <h3 class="list-ti">INDEPENDENCE</h3>
+                                <p class="list-txt">
+                                    금융회사 소속의 리서치센터가 아닌
+                                    <br>
+                                    독립 법인 내부 Chinese Wall 시행,
+                                    <br>
+                                    내부 통제 프로세스
+                                </p>
+                            </li>
+                            <li class="circle-list v1">
+                                <div class="list-icon v3"></div>
+                                <h3 class="list-ti">SYSTEM</h3>
+                                <p class="list-txt">
+                                    인물 정보 시스템, Quant based
+                                    <br>
+                                    배당 평가 모형보유, 각종 데이터 및
+                                    <br>
+                                    시스템을 활용한 업무 효율성
+                                </p>
+                            </li>
+                        </ul>
+                        <div class="result">
+                            <div class="arr">
+                                <img src="./resource/main_resrch_arr.png" alt="아래 화살표">
+                            </div>
+                            <div class="txt-box flex-center">
+                                <p>
+                                    지배구조 개선을 통한
+                                    <br>
+                                    <strong>주주가치 향상 & 자본시장 선진화</strong>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="bg-1"></div>
-                <div class="bg-2"></div>
             </section>
-            <section class=""></section>
+            <!-- 연구소 소개 labo intro -->
+            <section class="section labo-intro">
+                <div class="wrap con">
+                    <div class="cont-head">
+                        <h2 class="section-ti">금융공학연구소 소개</h2>
+                        <p class="txt-box">
+                            대신경제연구소의 금융공학연구소는 증권시장 계량분석과 다양한 투자 시스템 개발을 진행해 왔으며
+                            <br>
+                            <strong>풍부한 경험과 노하우를 바탕으로 전통적인 투자이론에 빅데이타 기반 최신 알고리즘을 융합</strong>하여
+                            <br>
+                            혁신적인 투자기법과 솔루션 개발을 진행하고 있습니다.
+                        </p>
+                    </div>
+                    <div class="cont-body flex">
+                        <!-- 원 아이템 -->
+                        <div class="tech">
+                            <div class="circle v1 flex-center">
+                                <span>
+                                    Asset Management
+                                    <br>
+                                    Platform
+                                </span>
+                            </div>
+                            <div class="circle v2 flex-center">
+                                <span>
+                                    Data Management
+                                    <br>
+                                    & Investment Algorithm
+                                </span>
+                            </div>
+                            <div class="circle center flex-center">
+                                <span>금융공학</span>
+                                <div class="arr"></div>
+                            </div>
+                            <div class="circle v3 flex-center">
+                                <span>
+                                    Quants Research
+                                    <br>
+                                    & Consulting
+                                </span>
+                            </div>
+                        </div>
+                        <ul class="item">
+                            <li class="flex v1">
+                                <div class="icon"></div>
+                                <div class="txt">Research</div>
+                            </li>
+                            <li class="flex v2">
+                                <div class="icon"></div>
+                                <div class="txt">Technology</div>
+                            </li>
+                            <li class="flex v3">
+                                <div class="icon"></div>
+                                <div class="txt">Algorithm</div>
+                            </li>
+                            <li class="flex v4">
+                                <div class="icon"></div>
+                                <div class="txt">Database</div>
+                            </li>
+                        </ul>
+                        <div class="result">
+                            <h3 class="result-box flex-center">
+                                <span>
+                                    금융공학
+                                    <br>
+                                    투자 솔루션
+                                </span>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 솔루션 solution -->
+            <section class="section solution">
+                <div class="bg"></div>
+                <div class="wrap con">
+                    <div class="cont-head">
+                        <h2 class="sol-ti">
+                            금융공학
+                            <br>
+                            투자 솔루션
+                        </h2>
+                        <p class="sol-sub">
+                            FINANCIAL ENGINEERING
+                        </p>
+                    </div>
+                    <div class="cont-body">
+                        <ul class="flex">
+                            <li class="item">
+                                <a href="#">
+                                    <div class="box">
+                                        <div class="num"></div>
+                                        <div class="line l1"></div>
+                                        <div class="line l2"></div>
+                                        <div class="line l3"></div>
+                                        <div class="line l4"></div>
+                                    </div>
+                                    <span class="li-sub">Financial Planning</span>
+                                    <p class="li-head">
+                                        은퇴
+                                        <br>
+                                        설계
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#">
+                                    <div class="box">
+                                        <div class="num"></div>
+                                        <div class="l1"></div>
+                                        <div class="l2"></div>
+                                        <div class="l3"></div>
+                                        <div class="l4"></div>
+                                    </div>
+                                    <span class="li-sub">PAS</span>
+                                    <p class="li-head">
+                                        종합자산관리
+                                        <br>
+                                        시스템
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#">
+                                    <div class="box">
+                                        <div class="num"></div>
+                                        <div class="l1"></div>
+                                        <div class="l2"></div>
+                                        <div class="l3"></div>
+                                        <div class="l4"></div>
+                                    </div>
+                                    <span class="li-sub">INSIGHTOR</span>
+                                    <p class="li-head">
+                                        주식 매매
+                                        <br>
+                                        시스템
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#">
+                                    <div class="box">
+                                        <div class="num"></div>
+                                        <div class="l1"></div>
+                                        <div class="l2"></div>
+                                        <div class="l3"></div>
+                                        <div class="l4"></div>
+                                    </div>
+                                    <span class="li-sub">DIAG</span>
+                                    <p class="li-head">
+                                        자문사 정보
+                                        <br>
+                                        분석 시스템
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#">
+                                    <div class="box">
+                                        <div class="num"></div>
+                                        <div class="l1"></div>
+                                        <div class="l2"></div>
+                                        <div class="l3"></div>
+                                        <div class="l4"></div>
+                                    </div>
+                                    <span class="li-sub">Portfolio Risk Analysis</span>
+                                    <p class="li-head">
+                                        포트폴리오
+                                        <br>
+                                        리스크 분석
+                                        <br>
+                                        시스템
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- 컨설트 consult -->
+            <section class="section consult">
+                <div class="wrap con flex">
+                    <div class="item-wrap v1">
+                        <div class="item-head">
+                            <h2 class="section-ti">지배구조 자문</h2>
+                            <p>
+                                기업지배구조 개선을 통해 <strong>기업의 가치 향상과 자본시장 선진화</strong>에
+                                <br>
+                                기여할 수 있도록 다양한 자문을 제공합니다.
+                            </p>
+                        </div>
+                        <div class="item-body">
+                            <ul class="flex">
+                                <li class="item">
+                                    <a href="#">
+                                        <h3>
+                                            의결권 행사
+                                            <br>
+                                            자문
+                                        </h3>
+                                        <p>
+                                            주주권익 향상을 위한 의결권 행사
+                                            <br>가이드라인 구축 및 자문 서비스
+                                            <br><br>
+                                            투자기업의 주요 주주에 대한
+                                            <br>의결권 행사 권고 서비스
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <h3>
+                                            ESG
+                                            <br>
+                                            분석 및 평가
+                                        </h3>
+                                        <p>
+                                            기업의 비재무적 요소인 ESG 성과를
+                                            <br>
+                                            평가 및 분석
+                                            <br><br>
+                                            기관투자자의 책임투자활동 지원
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <h3>
+                                            지배구조 관련
+                                            <br>
+                                            정보 제공
+                                        </h3>
+                                        <p>
+                                            인물 및 기업지배구조 DB
+                                            <br>주주총회 관련 DB
+                                            <br><br>ESG News Flow 및 공시 모니터링
+                                            <br>주주활동보고서
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <h3>
+                                            주주제안
+                                            <br>
+                                            자문
+                                        </h3>
+                                        <p>
+                                            주주이익 환원
+                                            <br>
+                                             - 배당 등
+                                            <br><br>
+                                            기업가치 증대방안
+                                            <br>
+                                             - 이사회 진단 등
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="item-wrap v2">
+                        <div class="item-head">
+                            <h2 class="section-ti">금융공학 컨설팅</h2>
+                            <p>
+                                투자분석과 모델링에 관한 다양한 경험을 토대로
+                                <br>
+                                <strong>포트폴리오, 자산배분, 투자 판단</strong>을 위한 컨설팅을 제공합니다.
+                            </p>
+                        </div>
+                        <div class="item-body">
+                            <ul class="flex">
+                                <li class="item">
+                                    <a href="#">
+                                        <h3>
+                                            금융시장
+                                            <br>
+                                            계량분석
+                                        </h3>
+                                        <p>
+                                            금융시장 계량분석과 각종 시뮬레이션을 통해 투자 목적별  정량적 판단 근거 제시
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <h3>
+                                            모델링 &
+                                            <br>
+                                            알고리즘 개발
+                                        </h3>
+                                        <p>
+                                            매크로 데이터 및  금융시장 미시적 가격 데이터 등을 결합하여  다양한 투자모형  및 알고리즘을  개발합니다.
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <h3>
+                                            금융투자
+                                            <br>
+                                            솔루션 개발
+                                        </h3>
+                                        <p>
+                                            포트폴리오 투자, 자산배분과 관련된 랩어카운트, 로보어드바이저 관련 시스템을 개발합니다.
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <h3>
+                                            기타 고객맞춤형
+                                            <br>
+                                            컨설팅
+                                        </h3>
+                                        <p>
+                                            금융공학을 활용하고 응용한 제반 연구 개발 컨설팅을 계획하고 있습니다.
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
+
+        <div class="go-top">
+            <img src="./resource/bt_go_top.png" alt="위로 가기">
+        </div>
+        
+        <!-- footer -->
+        <footer class="footer">
+            <div class="wrap con">
+                <div class="site-map flex">
+                    <div class="group">
+                        <div class="ft-menu sub-1">
+                            <div class="head">의안분석</div>
+                            <ul>
+                                <li><a href="#">주주총회 의안 분석</a></li>
+                                <li><a href="#">의결권행사 가이드라인, 개정절차</a></li>
+                                <li><a href="#">의안분석 내부프로세스</a></li>
+                                <li><a href="#">독립성확보방안</a></li>
+                                <li><a href="#">차별적인 의안분석 시스템</a></li>
+                            </ul>
+                        </div>
+                        <div class="ft-menu sub-2">
+                            <div class="head">보고서</div>
+                            <ul>
+                                <li><a href="#">ESG Weekly</a></li>
+                                <li><a href="#">Issue Report</a></li>
+                                <li><a href="#">판례 및 법령 제,개정 동향</a></li>
+                                <li><a href="#">대기업집단 지배구조 리포트</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <div class="ft-menu sub-1">
+                            <div class="head">데이터센터</div>
+                            <ul>
+                                <li><a href="#">인물 DB 시스템</a></li>
+                                <li><a href="#">배당평가모형</a></li>
+                                <li><a href="#">모니터링 시스템</a></li>
+                                <li><a href="#">주주총회 결과</a></li>
+                                <li><a href="#">기관투자자 의결권 행사내역</a></li>
+                            </ul>
+                        </div>
+                        <div class="ft-menu sub-2">
+                            <div class="head">ESG평가</div>
+                            <ul>
+                                <li><a href="#">평가개요</a></li>
+                                <li><a href="#">평가방법</a></li>
+                                <li><a href="#">ESG CONTROVERSIAL COMPANY REPORT</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <div class="ft-menu sub-1">
+                            <div class="head">지배구조관련정보</div>
+                            <ul>
+                                <li><a href="#">지배구조 관련 법령</a></li>
+                                <li><a href="#">지배구조 관련 기관</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <div class="ft-menu sub-1">
+                            <div class="head">금융공학</div>
+                            <ul>
+                                <li><a href="#">소개</a></li>
+                                <li><a href="#">투자솔루션</a></li>
+                                <li><a href="#">금융공학 컨설팅</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <div class="ft-menu sub-1">
+                            <div class="head">회사소개</div>
+                            <ul>
+                                <li><a href="#">임직원 인사말</a></li>
+                                <li><a href="#">DERI Vision</a></li>
+                                <li><a href="#">조직 및 기능</a></li>
+                                <li><a href="#">사업 영역</a></li>
+                                <li><a href="#">자문위원회</a></li>
+                                <li><a href="#">회사연혁</a></li>
+                                <li><a href="#">연구실적</a></li>
+                                <li><a href="#">스튜어드십 코드</a></li>
+                                <li><a href="#">윤리강령</a></li>
+                                <li><a href="#">회사약도</a></li>
+                                <li><a href="#">대신문고</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="ft-logo">
+                        <a class="img-box" href="#">
+                            <img src="./resource/main_logo_ft.png" alt="로고">
+                        </a>
+                    </div>
+                    <div class="info-con flex">
+                        <span>대표전화 02-769-3073</span>
+                        <span>팩스 02-2623-3378</span>
+                    </div>
+                    <address>Copyright 1976-2013 Daishin Economic Research Institute All Right Reserved.</address>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>
