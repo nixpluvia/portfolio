@@ -10,11 +10,13 @@ function scroll__init(){
     function ScrollAct(){
         var $global = $('.global');
         var $goTop = $('.go-top');
+        var $news = $('.cont-news');
         var scrollT = $(window).scrollTop();
         
         if (scrollT > 0) {
             $global.addClass('on');
             $goTop.addClass('on');
+            $news.addClass('on');
         }
         if ( scrollT <= 0 ) {
             $global.removeClass('on');
@@ -28,7 +30,7 @@ function scroll__init(){
 
 // 발견 요소의 offset 설정
 function ActiveOnVisible__initOffset() {
-    $(".active-on-visible, .actived-on-visible").each(function (index, node) {
+    $(".section-nav-on, .actived-on-visible").each(function (index, node) {
         var $node = $(node);
 
         var offsetTop = $node.offset().top;
@@ -50,12 +52,8 @@ function ActiveOnVisible__initOffset() {
 
 function ActiveOnVisible__checkAndActive() {
     // 발견하면 클래스 추가하기
-    $(".active-on-visible, .actived-on-visible:not(.actived)").each(function (index, node) {
+    $(".actived-on-visible:not(.actived)").each(function (index, node) {
         var $node = $(node);
-        var $actived;
-        if ($node.hasClass("actived-on-visible")) {
-            $actived = $(node);
-        }
 
         var winSt = $(window).scrollTop();
 
@@ -64,35 +62,29 @@ function ActiveOnVisible__checkAndActive() {
         var diffY = parseInt($node.attr("data-AOV-diff-y"));
         var delay = parseInt($node.attr("data-AOV-delay"));
 
-        if (winSt + diffY > offsetBottom == false && winSt + diffY >= offsetTop) {
-            setTimeout(function () {
-                if ($actived == undefined) {
-                    $node.addClass("active");
-                } else {
-                    $actived.addClass("actived");
-                }
-            }, delay);
+        if (winSt + diffY >= offsetTop) {
+            $node.addClass("actived");
         }
     });
 
-    // 벗어나면 클래스 제거
-    $(".active-on-visible.active").each(function (index, node) {
+    $('.section-nav-on').each(function(index, node){
         var $node = $(node);
+        var index = $node.index();
 
         var winSt = $(window).scrollTop();
-        var winHeight = $(window).height();
 
-        var offsetTop = $node.attr("data-AOV-offsetTop");
-        var offsetBottom = $node.attr("data-AOV-offsetBottom");
-        var diffY = parseInt($node.attr("data-AOV-diff-y"));
-        var delay = parseInt($node.attr("data-AOV-delay"));
-
-        if (winSt + winHeight < offsetTop || winSt > offsetBottom) {
-            setTimeout(function () {
-                $node.removeClass("active");
-            }, delay);
+        var offsetTop = parseInt($node.attr("data-AOV-offsetTop"));
+        var offsetBottom = parseInt($node.attr("data-AOV-offsetBottom"));
+        var diffY = 68;
+        
+        if(winSt + diffY >= offsetTop && winSt + diffY < offsetBottom){
+            // console.log(index);    
+            $('.section-nav-btn > ul > li').eq(index).addClass('current');
         }
-    });
+        else {
+            $('.section-nav-btn > ul > li').eq(index).removeClass('current');
+        }
+    })
 }
 
 
