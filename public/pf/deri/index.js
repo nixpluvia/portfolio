@@ -27,6 +27,14 @@ function scroll__init(){
     $(window).scroll(_.throttle(ScrollAct, 70));
 }
 
+function goTopBtn__init(){
+    $('.go-top').click(function(){
+        $('html,body').animate({
+            scrollTop : 0
+        }, 600)
+    })
+}
+
 
 // 발견 요소의 offset 설정
 function ActiveOnVisible__initOffset() {
@@ -88,8 +96,46 @@ function ActiveOnVisible__checkAndActive() {
 }
 
 
+function dotsNav__init(){
+    $('.section-nav-btn > .dots > .dot').click(function(){
+        var $this = $(this);
+        var dotIndex = $this.index();
+        var $section = $('.container > .section');
+        var sectionSt = $section.eq(dotIndex).attr('data-AOV-offsetTop');
 
+        $section.removeClass('current');
+        $section.eq(dotIndex).addClass('current');
 
+        $('html,body').stop().animate({
+            scrollTop : sectionSt + 'px'
+        }, 700)
+    })
+}
+
+function gsap__init() {
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to(".research > .bg", {
+        scrollTrigger: {
+            trigger: ".research",
+            start: "center bottom",
+            end: "bottom bottom",
+            scrub: true,
+            toggleActions: "reverse"
+        },
+        y: 239
+    })
+    gsap.to(".solution > .bg", {
+        scrollTrigger: {
+            trigger: ".solution",
+            start: "center bottom",
+            end: "765 bottom",
+            scrub: true,
+            toggleActions: "reverse"
+        },
+        y: 271
+    })
+}
 
 
 
@@ -100,8 +146,13 @@ $(function () {
 
     scroll__init();
 
+    goTopBtn__init();
+
     ActiveOnVisible__initOffset();
     ActiveOnVisible__checkAndActive();
     $(window).resize(_.throttle(ActiveOnVisible__initOffset, 70));
     $(window).scroll(_.throttle(ActiveOnVisible__checkAndActive, 70));
+
+    dotsNav__init();
+    gsap__init();
 })

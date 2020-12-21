@@ -450,8 +450,10 @@ body {
     position: fixed;
     top: 167px;
     left: 33px;
+    z-index: 100;
 }
 .section-nav-btn ul li {
+    position: relative;
     margin: 20px auto;
     width: 10px;
     height: 10px;
@@ -463,6 +465,32 @@ body {
     margin-left: -1.5px;
     border: 3px solid #0397d7;
     background: none;
+}
+
+.section-nav-btn ul li > p{
+    display: none;
+    position: absolute;
+    top: -11.5px;
+    left: 20px;
+}
+.section-nav-btn ul li:hover > p {
+    display: flex;
+    width: 300px;
+}
+.section-nav-btn ul li > p::before {
+    content:"";
+    display: inline-block;
+    width: 8px;
+    height: 29px;
+    background: url('./resource/ico_tab.png') no-repeat;
+}
+.section-nav-btn ul li > p > span {
+    display: inline-block;
+    padding: 0 10px 0 5px;
+    font-size: 15px;
+    line-height: 29px;
+    color: #ffffff;
+    background-color: #0397d7;
 }
 
 
@@ -886,23 +914,24 @@ body {
 .container .research {
     position: relative;
     overflow: hidden;
+    background-color: #f0f0f2;
 }
 .container .research >.bg{
     position: absolute;
-    top: 0;
+    top: -239px;
     left: 0;
     width: 100%;
     height: 1100px;
     background: #f0f0f2 url(./resource/main_cont_resrch_bg.png) no-repeat;
     background-size: contain;
     background-position: right bottom;
-    z-index: -1;
+    z-index: 1;
 }
 .research > .wrap {
     position: relative;
     padding: 100px 95px 93px;
     box-sizing: border-box;
-    z-index: 1;
+    z-index: 2;
 }
 .research .cont-head > p {
     margin: 20px 0 105px 0;
@@ -1397,7 +1426,7 @@ body {
 }
 .solution .bg {
     position: absolute;
-    top: -100px;
+    top: -271px;
     left: 0;
     width: 100%;
     height: 771px;
