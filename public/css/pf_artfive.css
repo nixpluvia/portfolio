@@ -1,0 +1,1118 @@
+/*폰트*/
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+
+html {
+    font-family: 'Noto Sans KR','Nanum Gothic', sans-serif;
+}
+
+/* 노말라이즈 */
+body,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+}
+
+label[for] {
+    cursor: pointer;
+    user-select: none;
+}
+button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    outline-style: none;
+}
+*:focus{
+    outline: none;
+}
+
+/* 라이브러리 */
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.absolute-left {
+    position: absolute;
+    left: 0;
+}
+
+.absolute-right {
+    position: absolute;
+    right: 0;
+}
+
+.absolute-bottom {
+    position: absolute;
+    bottom: 0;
+}
+
+.absolute-top {
+    position: absolute;
+    top: 0;
+}
+
+.absolute-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.absolute-middle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.absolute-middle.absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.relative {
+    position: relative;
+}
+
+.cell {
+    float: left;
+    box-sizing: border-box;
+}
+
+.cell-right {
+    float: right;
+    box-sizing: border-box;
+}
+
+.row::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.clear-both {
+    clear: both;
+}
+
+.img-box>img {
+    width: 100%;
+    display: block;
+}
+
+.con {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.margin-0-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+.line-height-0 {
+    line-height: 0;
+}
+
+.line-height-0>* {
+    line-height: normal;
+}
+
+.width-100p-except-30px {
+    width: calc(100% - 30px);
+}
+
+.width-100p-except-35px {
+    width: calc(100% - 35px);
+}
+
+.width-100p-except-40px {
+    width: calc(100% - 40px);
+}
+
+.width-100p-except-50px {
+    width: calc(100% - 50px);
+}
+
+.width-100p-except-80px {
+    width: calc(100% - 80px);
+}
+
+.width-100p-except-100px {
+    width: calc(100% - 100px);
+}
+
+.height-100p {
+    height: 100%;
+}
+
+.height-50p {
+    height: 50%;
+}
+
+.border-box {
+    box-sizing: border-box;
+}
+
+.font-size-dot-8rem {
+    font-size: .8rem;
+}
+
+.table-row {
+    display: table;
+}
+
+.table-row.row::after {
+    display: inline;
+    clear: non;
+}
+
+.table-row>.cell {
+    float: none;
+    display: table-cell;
+}
+
+/* 라이브러리 - flex */
+*>.flex {
+    display: flex;
+}
+
+*>.flex-column-nowrap {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+*>.flex-grow-1 {
+    flex-grow: 1;
+}
+*>.flex-jc-st {
+    display: flex;
+    justify-content: flex-start;
+}
+
+*>.flex-jc-end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+*>.flex-jc-c {
+    display: flex;
+    justify-content: center;
+}
+
+*>.flex-ai-c {
+    display: flex;
+    align-items: center;
+}
+*>.flex-self-c {
+    display: flex;
+    align-self: center;
+}
+
+*>.flex-row-nowrap {
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+*>.flex-ch-basis-0 {
+    display: flex;
+}
+
+.flex-ch-basis-0>* {
+    flex-basis: 0;
+}
+
+*>.flex-1-0-0 {
+    flex: 1 0 0;
+}
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+/*커스텀*/
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+
+video {
+    object-fit: contain;
+}
+.con {
+    max-width: 1400px;
+}
+/* 스크롤 페이지*/
+.scroll-box > .page {
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+/* 상단 바 */
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+/* 메인 로고 */
+.top-bar > .logo {
+    position:absolute;
+    top: 52px;
+    left: 58px;
+}
+.top-bar > .logo > a {
+    position: relative;
+    display: block;
+}
+.top-bar > .logo > a > img{
+    display: block;
+}
+.top-bar > .logo > a .logo-gray{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.6s;
+}
+.top-bar.active > .logo > a .logo-gray{
+    opacity: 1;
+}
+
+/* 상단 util 메뉴 */
+.top-bar > .util-menu {
+    position: absolute;
+    top: 35px;
+    right: 59px;
+}
+.top-bar > .util-menu > .util > li > a {
+    display: block;
+}
+/* 상단 util 메뉴 아이콘 */
+.top-bar > .util-menu > .util > li > a.tell-icon {
+    width: 32px;
+}
+.top-bar > .util-menu > .util > li > a.kakao-icon {
+    width: 36px;
+}
+.top-bar > .util-menu > .util > li > a.notice-icon {
+    width: 37px;
+}
+.top-bar > .util-menu > .util > li + li {
+    margin-left: 15px;
+}
+.top-bar > .util-menu > .util > li > a > svg{
+    width: 100%;
+}
+.top-bar > .util-menu > .util > li > a > svg path{
+    fill: white;
+    transition: fill 0.6s;
+}
+.top-bar.active > .util-menu > .util > li > a > svg path{
+    fill: #333;
+}
+
+
+
+/* 상단 바 - 메뉴 바 버튼 */
+.top-bar > .util-menu > .bar-icon-box {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin-left: 30px;
+    cursor: pointer;
+}
+.top-bar > .util-menu > .bar-icon-box > .bar-icon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 38px;
+    height: 26px;
+    transform: translateY(-50%);
+}
+.top-bar > .util-menu > .bar-icon-box> .bar-icon > div{
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    transition: background 0.6s, top 0.1s, bottom 0.1s, transform 0.1s, opacity 0.1s;
+}
+.top-bar.active > .util-menu > .bar-icon-box> .bar-icon > div{
+    background-color: #333;
+}
+
+.top-bar > .util-menu > .bar-icon-box> .bar-icon > .l1{
+    top: 0;
+    left: 0;
+}
+.top-bar > .util-menu > .bar-icon-box> .bar-icon > .l2{
+    top: 12px;
+    left: 0;
+    width: 80%;
+    opacity: 1;
+}
+.top-bar > .util-menu > .bar-icon-box> .bar-icon > .l3{
+    bottom: 0;
+    left: 0;
+}
+/* 메뉴 바 클릭 애니메이션 */
+.top-bar > .util-menu > .bar-icon-box.active> .bar-icon > div{
+    transition: top 0.6s, bottom 0.6s, transform 0.6s, opacity 0.6s;
+}
+.top-bar > .util-menu > .bar-icon-box.active> .bar-icon > .l1{
+    top: 50%;
+    left: 0;
+    transform: rotate(-45deg) translateY(-1px);
+}
+.top-bar > .util-menu > .bar-icon-box.active> .bar-icon > .l2{
+    opacity: 0;
+}
+.top-bar > .util-menu > .bar-icon-box.active> .bar-icon > .l3{
+    bottom: 50%;
+    left: 0;
+    transform: rotate(45deg) translateY(1px);
+}
+
+.menu-box {
+    position: fixed;
+    width: 100%;
+    height: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: height 0.5s;
+    transition-timing-function: cubic-bezier(.67,.09,.56,.9);
+    background-color: #fff;
+    z-index: 90;
+}
+.menu-box.active {
+    height: 100%;
+}
+
+.menu-box > .menu-box-figure{
+    margin-bottom: 40px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.menu-box.active > .menu-box-figure{
+    opacity: 1;
+    transition: opacity 0s;
+}
+.menu-box > .menu-list{
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.menu-box.active > .menu-list{
+    opacity: 1;
+    transition: opacity 0s;
+}
+.menu-box > .menu-list > ul > li {
+    font-family: 'Montserrat',sans-serif;
+    font-size: 26px;
+    line-height: 26px;
+    font-weight: 600;
+    text-align: center;
+}
+.menu-box > .menu-list > ul > li:not(:last-child) {
+    margin-bottom: 30px;
+}
+.menu-box > .menu-list > ul > li:hover > a{
+    letter-spacing: 0;
+    opacity: 1;
+    transition: letter-spacing 0.3s, opacity 0.3s ;
+}
+.menu-box > .menu-list > ul > li:hover > a{
+    letter-spacing: 3px;
+    opacity: 0.5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 하단 스크롤 아이콘 */
+.btn-scroll {
+    position: fixed;
+    bottom: 45px;
+    left: calc(50% - 40px);
+    width: 80px;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 80;
+}
+.btn-scroll.active {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 1s;
+}
+.btn-scroll > .line {
+    width: 1px;
+    height: 90px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+.btn-scroll > .txt {
+    font-family: 'Montserrat',sans-serif;
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 500;
+    margin-top: 18px;
+    color: #fff;
+}
+.active .btn-scroll > .line {
+    background-color: #333;
+}
+.active .btn-scroll > .txt {
+    color: #333;
+}
+
+
+/* 스크롤 dots */
+.scroll-dots {
+    position: fixed;
+    top: 50%;
+    right: 50px;
+    transform: translateY(-50%);
+    z-index: 80;
+}
+.scroll-dots > .dot {
+    position: relative;
+    width: 12px;
+    height: 12px;
+    border: 1px solid rgba(255,255,255,0);
+    border-radius: 100%;
+    box-sizing: border-box;
+    transition: border 0.3s;
+    cursor: pointer;
+}
+.scroll-dots > .dot.active {
+    border-color: rgba(255,255,255,1);
+}
+.scroll-dots > .dot > div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    border-radius: 100%;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+}
+.scroll-dots > .dot + .dot {
+    margin-top: 15px;
+}
+.active .scroll-dots > .dot {
+    border-color: rgba(51,51,51,0);
+}
+.active .scroll-dots > .dot.active {
+    border-color: rgba(51,51,51,1);
+    transition: border 0s;
+}
+.active .scroll-dots > .dot > div {
+    background-color: #333;
+}
+
+
+
+
+
+/* 메인 스크롤 페이지 */
+.scroll-box {
+    min-width: 1400px;
+}
+.scroll-box > .page{
+    position: relative;
+}
+/* 스크롤 페이지 배경 영상*/
+.scroll-box > .page > .bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+/* 스크롤 페이지 배경 이미지*/
+.scroll-box > .page > .bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+
+.scroll-box > .page > .bg-img > img{
+    width: 100%;
+}
+.scroll-box > .page > .bg-color {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: #f4f4f4;
+}
+
+/* 스크롤 페이지 중앙 텍스트*/
+.scroll-box > .page > .content {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+}
+.scroll-box > .page > .content > .title-t1 {
+    font-size: 46px;
+    font-weight: normal;
+    line-height: 1.3;
+    letter-spacing: -1.5px;
+    opacity: 0;
+    transform: translateY(60px);
+}
+.scroll-box > .page.active > .content > .title-t1 {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.6s;
+}
+.scroll-box > .page > .content > .t1 {
+    font-size: 17px;
+    line-height: 1.8;
+    font-weight: 300;
+    letter-spacing: -0.5px;
+    margin-top: 28px;
+    opacity: 0;
+    transform: translateY(60px);
+}
+.scroll-box > .page.active > .content > .t1 {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.6s 0.1s;
+}
+
+.scroll-box > .page > .section-footer{
+    font-family: 'Montserrat',sans-serif;
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    text-align: right;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.5;
+    letter-spacing: -0.5px;
+    color: rgba(255,255,255,0.2);
+}
+
+
+
+
+
+/* 스크롤 페이지 중앙 텍스트 section1*/
+.scroll-box > .page1 > .content > .t1 {
+    font-size: 38px;
+    line-height: 38px;
+    font-weight: 200;
+    letter-spacing: -1px;
+    margin-top: 28px;
+    opacity: 0;
+    transform: translateY(60px);
+}
+.scroll-box > .page1.active > .content > .t1 {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.6s;
+}
+.scroll-box > .page1 > .content > .title-t1 {
+    font-size: 70px;
+    line-height: 70px;
+    font-weight: 300;
+    letter-spacing: -3px;
+    margin-top: 25px;
+    opacity: 0;
+    transform: translateY(60px);
+}
+.scroll-box > .page1.active > .content > .title-t1 {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.6s 0.1s;
+}
+.scroll-box > .page > .content > .t2 {
+    font-family: 'Montserrat',sans-serif;
+    font-size: 50px;
+    line-height: 50px;
+    font-weight: 500;
+    letter-spacing: -1.5px;
+    margin-top: 30px;
+    opacity: 0;
+    transform: translateY(60px);
+}
+.scroll-box > .page1.active > .content > .t2 {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.6s 0.2s;
+}
+
+/* 스크롤 페이지 텍스트 section6*/
+.scroll-box > .page-white > .content {
+    color: #333;
+}
+.scroll-box > .page-white > .section-footer {
+    color: #333;
+}
+
+/* 스크롤 페이지 section7~8 타이틀*/
+.scroll-box > .page > .content > .title-t2 {
+    font-family: 'Montserrat',sans-serif;
+    position: relative;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 24px;
+    opacity: 0;
+}
+.scroll-box > .page > .content > .title-t2 > span{
+    position: relative;
+    padding: 18px 0;
+}
+.scroll-box > .page > .content > .title-t2 > span::before {
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 1px;
+    background-color: #333;
+}
+.scroll-box > .page > .content > .title-t2 > span::after {
+    content:"";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30px;
+    height: 1px;
+    background-color: #333;
+}
+.scroll-box > .page.active > .content > .title-t2 {
+    opacity: 1;
+    transition: all 0.6s;
+}
+
+/* 스크롤 페이지 텍스트 section7 프로그램 리스트 요소*/
+.scroll-box > .page > .content > .program-list {
+    justify-content: space-between;
+    max-width: 1400px;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.scroll-box > .page > .content > .program-list > li{
+    width: 400px;
+    height: 400px;
+}
+.scroll-box > .page > .content > .program-list > li > a {
+    position: relative;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+/* 프로그램 리스트 이미지 */
+.scroll-box > .page > .content > .program-list > li > a > .img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.scroll-box > .page > .content > .program-list > li:hover > a > .img{
+    opacity: 1;
+}
+.scroll-box > .page > .content > .program-list > li:nth-child(1) > a > .img{
+    background-image: url(/images/artfive/program_list_img01.jpg);
+}
+.scroll-box > .page > .content > .program-list > li:nth-child(2) > a > .img{
+    background-image: url(/images/artfive/program_list_img02.jpg);
+}
+.scroll-box > .page > .content > .program-list > li:nth-child(3) > a > .img{
+    background-image: url(/images/artfive/program_list_img03.jpg);
+}
+
+/* 프로그램 리스트 - 모양 */
+.scroll-box > .page > .content > .program-list > li > a > .figure {
+    position: absolute;
+    top: calc(50% - 126px);
+    left: calc(50% - 126px);
+    z-index: 2;
+}
+.scroll-box > .page > .content > .program-list > li > a > .figure > svg{
+    width: 252px;
+    height: 252px;
+}
+.scroll-box > .page > .content > .program-list > li > a > .figure > svg .s1{
+    fill: none;
+    stroke: #000;
+    opacity: 0.25;
+}
+.scroll-box > .page > .content > .program-list > li:hover > a > .figure > svg .s1{
+    stroke: #fff;
+    opacity: 0.5;
+}
+/* 프로그램 리스트 - 텍스트 */
+.scroll-box > .page > .content > .program-list > li > a > .txt {
+    font-family: 'Montserrat',sans-serif;
+    position: relative;
+    text-align:left;
+    font-size: 38px;
+    line-height: 1.15;
+    letter-spacing: -0.2px;
+    padding-left: 50px;
+    color: #000;
+    z-index: 3;
+}
+.scroll-box > .page > .content > .program-list > li:hover > a > .txt {
+    color: #fff;
+}
+
+
+
+/* 스크롤 페이지 텍스트 section8 */
+.scroll-box > .page > .content > .merit-list {
+    max-width: 1400px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    transition: opacity 0.6s;
+}
+.scroll-box > .page.active > .content > .merit-list {
+    opacity: 1;
+}
+.scroll-box > .page > .content > .merit-list > li {
+    position: relative;
+    width: calc(100% / 3);
+}
+.scroll-box > .page > .content > .merit-list > li::before {
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border-left: 1px solid #cbcbcb;
+}
+.scroll-box > .page > .content > .merit-list > li:last-child::before {
+    border-right: 1px solid #cbcbcb;
+}
+.scroll-box > .page > .content > .merit-list > li::after {
+    content:"";
+    display: block;
+    padding-top: 64.377%;
+}
+.scroll-box > .page > .content > .merit-list > li > .wrap{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+}
+.scroll-box > .page > .content > .merit-list > li > .wrap > .info-txt{
+    margin-top: 28px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: -0.5;
+}
+
+/* 스크롤 페이지 텍스트 section9 */
+.scroll-box > .page > .content > .wrap {
+    min-width: 1200px;
+}
+.scroll-box > .page > .content > .wrap > .content-box > .left{
+    width: calc(100% / 7);
+}
+.scroll-box > .page > .content > .wrap > .content-box > .left > h1{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 600;
+    color: #333;
+}
+.scroll-box > .page > .content > .wrap > .content-box > .left > .arrow {
+    justify-content: center;
+    margin-top: 25px
+}
+.scroll-box > .page > .content > .wrap > .content-box > .left > .arrow > .slick-arrow{
+    position: static;
+    display: flex;
+    top: auto;
+    left: auto;
+    right: auto;
+    transform: none;
+    outline-style: none;
+    width: 40px;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+.scroll-box > .page > .content > .wrap > .content-box > .left > .arrow > .slick-arrow::before{
+    content: "";
+}
+.scroll-box > .page > .content > .wrap > .content-box > .left > .arrow > .slick-prev {
+    border-right: 1px solid #cbcbcb;
+}
+.scroll-box > .page > .content > .wrap > .content-box > .left > .arrow > .slick-next > img {
+    transform: scaleX(-1);
+}
+
+
+
+
+
+.scroll-box > .page > .content > .wrap > .notice-wrap > .right{
+    position: relative;
+    flex: 1 0 0 ;
+    overflow: hidden;
+}
+.scroll-box > .page > .content > .wrap > .notice-wrap > .right::before{
+    content:"";
+    display: block;
+    padding-top: 37.1666%;
+}
+
+.scroll-box > .page > .content > .wrap > .notice-wrap > .right > .slide {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+}
+.scroll-box > .page > .content > .wrap > .notice-wrap > .right > .slide .item{
+    outline-style: none;
+}
+.scroll-box > .page > .content > .wrap > .notice-wrap > .right > .slide .item > .bn-img{
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.scroll-box > .page > .content > .wrap > .notice-wrap > .right > .slide .item > .bn-img::before{
+    content:"";
+    display: block;
+    padding-top: 30.8333%;
+}
+
+
+
+
+
+.scroll-box > .page > .content > .wrap > .media-wrap{
+    margin-top: 70px;
+}
+.scroll-box > .page > .content > .wrap > .media-wrap > .right{
+    position: relative;
+    flex: 1 0 0;
+    overflow: hidden;
+    border-top: 2px solid #000;
+    box-sizing: border-box;
+}
+.scroll-box > .page > .content > .wrap > .media-wrap > .right > .slide .item > a {
+    padding: 38px 0;
+}
+.scroll-box > .page > .content > .wrap > .media-wrap > .right > .slide .item > a > .date{
+    font-family: 'Montserrat',sans-serif;
+    width: 151px;
+    text-align: center;
+    font-size: 30px;
+    line-height: 30px;
+    color: #333
+}
+.scroll-box > .page > .content > .wrap > .media-wrap > .right > .slide .item > a > .date > .year{
+    display: block;
+    margin-top: 5px;
+    font-size: 15px;
+    line-height: 15px;
+    color: #777;
+}
+.scroll-box > .page > .content > .wrap > .media-wrap > .right > .slide .item > a > .txt{
+    position: relative;
+    flex: 1 0 0;
+    text-align: left;
+    padding-right: 200px;
+    box-sizing: border-box;
+}
+.scroll-box > .page > .content > .wrap > .media-wrap > .right > .slide .item > a > .txt .subject_title{
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: -1px;
+    font-weight: 500;
+}
+.scroll-box > .page > .content > .wrap > .media-wrap > .right > .slide .item > a > .txt > .con-txt{
+    margin-top: 20px;
+    font-size: 17px;
+    line-height: 17px;
+    color: #777;
+}
+.scroll-box > .page > .content > .wrap > .media-wrap > .right > .slide .item > a > .txt > .more-icon{
+    position: absolute;
+    top: 1px;
+    right: 50px;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    transform: rotate(0);
+    background-color: transparent;
+    transition:  transform 0.2s, background 0.2s;
+}
+.scroll-box > .page > .content > .wrap > .media-wrap > .right > .slide .item > a:hover > .txt > .more-icon{
+    transform: rotate(90deg);
+    background-color: #333;
+}
+.scroll-box > .page > .content > .wrap > .media-wrap > .right > .slide .item > a > .txt > .more-icon::before{
+    content:"";
+    position: absolute;
+    top: 29.5px;
+    left: 17px;
+    width: 26px;
+    height: 1px;
+    background-color: #333;
+}
+.scroll-box > .page > .content > .wrap > .media-wrap > .right > .slide .item > a > .txt > .more-icon::after{
+    content:"";
+    position: absolute;
+    top: 17px;
+    left: 29.5px;
+    width: 1px;
+    height: 26px;
+    background-color: #333;
+}
+.scroll-box > .page > .content > .wrap > .media-wrap > .right > .slide .item > a:hover > .txt > .more-icon::before, .scroll-box > .page > .content > .wrap > .media-wrap > .right > .slide .item > a:hover > .txt > .more-icon::after {
+    background-color: #fff;
+}
+
+/* 스크롤 페이지 텍스트 section9 */
+body .scroll-box > .page10 {
+    height: auto;
+}
+.scroll-box > .page10 > .footer > .figure{
+    justify-content: center;
+}
+.scroll-box > .page10 > .footer .footer-nav {
+    margin-top: 35px;
+}
+.scroll-box > .page10 > .footer .footer-nav > ul{
+    justify-content: center;
+}
+.scroll-box > .page10 > .footer .footer-nav > ul > li{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 600;
+    letter-spacing: -0.4px;
+}
+.scroll-box > .page10 > .footer .footer-nav > ul > li + li{
+    margin-left: 70px;
+}
+.scroll-box > .page10 > .footer .footer-bottom{
+    justify-content: space-between;
+    margin: 35px 3%;
+    border-top: 1px solid #333;
+    box-sizing: border-box;
+}
+.scroll-box > .page10 > .footer .footer-bottom > .left {
+    margin-top: 50px;
+}
+.scroll-box > .page10 > .footer .footer-bottom > .left > .footer-logo > a {
+    display: block;
+    width: 152px;
+}
+.scroll-box > .page10 > .footer .footer-bottom > .left > .copyright{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 600;
+    color: #777;
+    margin-left: 40px;
+}
+.scroll-box > .page10 > .footer .footer-bottom > .right {
+    margin-top: 30px;
+}
+.scroll-box > .page10 > .footer .footer-bottom > .right > .footer-util-icon > li + li{
+    margin-left: 7px;
+}
+.scroll-box > .page10 > .footer .footer-bottom > .right > .footer-util-icon > li > a{
+    flex-direction: column;
+    align-items: center;
+}
+.scroll-box > .page10 > .footer .footer-bottom > .right > .footer-util-icon > li > a > .figure {
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    background-color: #454545;
+}
+.scroll-box > .page10 > .footer .footer-bottom > .right > .footer-util-icon > li > a > .figure > img{
+    margin-top: -5px;
+}
+.scroll-box > .page10 > .footer .footer-bottom > .right > .footer-util-icon > li > a > .icon-name {
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: -0.5px;
+    font-weight: 500;
+    margin-top: 5px;
+    color: #555555;
+}
